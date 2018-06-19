@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-SemiBold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-Medium.ttf");
+  font-weight: medium;
+}

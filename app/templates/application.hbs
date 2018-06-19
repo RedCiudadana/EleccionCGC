@@ -10,19 +10,11 @@
       {{navbar.toggle}}
 
       {{#link-to "application" class="navbar-brand"}}
-        {{#if model.config.logoUrl}}
           <img
-            src="{{model.config.logoUrl}}"
+            src="app/img/logo-eleccion-CGC.png"
             class="img-responsive"
-            title="Elección MP"
-            alt="Elección MP">
-        {{else}}
-          <img
-            src="app/img/logo-eleccion-mp.png"
-            class="img-responsive"
-            title="{{model.config.logoTitle}}"
-            alt="{{model.config.logoTitle}}">
-        {{/if}}
+            title="Eleccion CGC"
+            alt="Logo Eleccion CGC">
       {{/link-to}}
     </div>
 
@@ -35,7 +27,7 @@
     {{/navbar.content}}
   {{/bs-navbar}}
 
-  <div class="container content-container">
+  <div class="content-container">
     {{outlet}}
   </div>
 </div>
