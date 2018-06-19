@@ -206,7 +206,7 @@ nav > .container {
 .nav-candidator .list-inline > li a {
     padding: 15px;
     font-size: 16px;
-    color: #1b2b3a;
+    color: #f6921eff;
 }
 
 .nav-candidator .list-inline > li a i.fa {
@@ -218,25 +218,12 @@ nav > .container {
     margin-left: 0px;
 }
 
-.color-gray {
-    /* Gris palidísimo */
-    color: #e6e7e8;
-}
-
 .bg-color-gray {
     background-color: #e6e7e8;
 }
 
 .bg-color-white {
     background-color: #ffffff;
-}
-
-.color-blue {
-    color: #12a2e0;
-}
-
-.color-yellow {
-    color: #ffc80e;
 }
 
 .color-light-blue {
@@ -279,6 +266,10 @@ p.datos-abiertos {
     margin-top: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.nav-candidator {
+    color: white;
 }
 
 .nav-candidator .list-inline > li.social-media {
@@ -483,4 +474,20 @@ a:focus {
 
 .caption .caption-background {
     text-align: center;
+}
+
+.nav-candidator .list-inline > li:first-child a {
+    border: 0px;
+}
+
+.nav-candidator .list-inline > li a {
+    border: 0px;
+}
+
+.btn-light-blue {
+    background-color: #f6921eff;
+}
+
+.profile-candidate .table tbody > tr > td {
+    border: 0px;
 }

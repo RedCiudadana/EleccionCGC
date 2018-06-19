@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
+import Ember from 'ember';
 
 export default Controller.extend({
   estaEnProceso: true,

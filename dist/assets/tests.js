@@ -52,7 +52,7 @@ define('mi-guatemala/tests/app.lint-test', [], function () {
 
   QUnit.test('controllers/index.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'controllers/index.js should pass ESLint\n\n2:10 - \'run\' is defined but never used. (no-unused-vars)\n2:15 - \'scheduleOnce\' is defined but never used. (no-unused-vars)');
+    assert.ok(true, 'controllers/index.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/perfil/frente-a-frente.js', function (assert) {
@@ -67,7 +67,7 @@ define('mi-guatemala/tests/app.lint-test', [], function () {
 
   QUnit.test('controllers/perfiles.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'controllers/perfiles.js should pass ESLint\n\n46:24 - \'Ember\' is not defined. (no-undef)');
+    assert.ok(true, 'controllers/perfiles.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/tabla-gradacion.js', function (assert) {
@@ -87,7 +87,7 @@ define('mi-guatemala/tests/app.lint-test', [], function () {
 
   QUnit.test('models/partido.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/partido.js should pass ESLint\n\n1:8 - \'Ember\' is defined but never used. (no-unused-vars)\n4:10 - \'hasMany\' is defined but never used. (no-unused-vars)');
+    assert.ok(true, 'models/partido.js should pass ESLint\n\n');
   });
 
   QUnit.test('models/perfil.js', function (assert) {
@@ -217,7 +217,7 @@ define('mi-guatemala/tests/app.lint-test', [], function () {
 
   QUnit.test('services/spreadsheets.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'services/spreadsheets.js should pass ESLint\n\n44:11 - Unexpected console statement. (no-console)\n66:13 - Unexpected console statement. (no-console)\n77:13 - Unexpected console statement. (no-console)');
+    assert.ok(true, 'services/spreadsheets.js should pass ESLint\n\n');
   });
 
   QUnit.test('transforms/frente-a-frente.js', function (assert) {
