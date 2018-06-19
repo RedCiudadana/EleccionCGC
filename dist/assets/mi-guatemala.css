@@ -260,12 +260,10 @@ p.datos-abiertos {
     color: #1b2b3a;
 }
 
-#biografia-container {
-    background-color: #1b2b3a;
-    color: #FFFFFF;
+.perfil-container {
     margin-top: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.16);
 }
 
 .nav-candidator {
@@ -282,7 +280,6 @@ p.datos-abiertos {
 }
 
 .panel-default > .panel-heading {
-    background-color: #75bbcc;
     padding: 25px;
     font-size: 16px;
 }
@@ -490,4 +487,8 @@ a:focus {
 
 .profile-candidate .table tbody > tr > td {
     border: 0px;
+}
+
+.shadow {
+    box-shadow: 9px 6px 5px 0px rgba(0,0,0,0.16);
 }

@@ -1,5 +1,5 @@
 <div class="container-profile">
-  <div class="profile-candidate">
+  <div class="profile-candidate perfil-container">
     <div class="row">
       <div class="col-md-3">
         <div id="candidate-img-profile" style="padding-top: 20px;">
@@ -72,43 +72,54 @@
   </div>
 </div>
 
-<div id="biografia-container" class="row">
-  <div class="col-md-3 text-center">
-    <img
-      src="app/img/logo-libro.png"
-      class="img-responsive center"
-      style="max-width: 120px; margin-top: 20px; margin-bottom: 20px;" />
+<div class="row perfil-container">
+  <div class="col-md-12" style="display:flex;">
+      <img
+      src="/app/img/logo-documento.png"
+      alt="Biografía"
+      style="width: 60px; height:60px; margin: 10px 30px 10px 10px;">
+      <h3 style="margin-top:auto;margin-bottom:auto;">Biografía</h3>
   </div>
-  <div class="col-md-8">
-    <h3>Biografía</h3>
-    <p style="margin-bottom: 30px;" class="justify">
-      {{model.perfil.biografia}}
-    </p>
+  <div class="col-md-12" style="margin-top: 10px;">
+    <p class="justify">{{model.perfil.biografia}}</p>
   </div>
 </div>
 
-<div class="buffer-top-30 row">
+<div class="buffer-top-30 row" style="margin-bottom: 30px;">
 
   <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading font-weight-600">Experiencia profesional</div>
-
-      <div class="panel-body justify">
-        {{model.perfil.experienciaProfesional}}
+    <div class="row perfil-container" style="height: 30rem;  margin-right: 2px;">
+      <div class="col-md-12" style="display:flex;">
+          <img
+          src="/app/img/logo-libro.png"
+          alt="Experiencia academica"
+          style="width: 60px; height:60px; margin: 10px 30px 10px 10px;">
+          <h3 style="margin-top:auto;margin-bottom:auto;">Experiencia academica</h3>
+      </div>
+      <div class="col-md-12" style="margin-top: 10px;">
+        <p class="justify">{{model.perfil.experienciaAcademica}}</p>
       </div>
     </div>
   </div>
 
   <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading font-weight-600">Experiencia académica</div>
-
-      <div class="panel-body justify">
-        {{model.perfil.experienciaAcademica}}
+    <div class="row perfil-container" style="height: 30rem; margin-left: 2px;">
+      <div class="col-md-12" style="display:flex;">
+          <img
+          src="/app/img/logo-portafolio.png"
+          alt="Experiencia profesional"
+          style="width: 60px; height:60px; margin: 10px 30px 10px 10px;">
+          <h3 style="margin-top:auto;margin-bottom:auto;">Experiencia profesional</h3>
+      </div>
+      <div class="col-md-12" style="margin-top: 10px;">
+        <p class="justify">{{model.perfil.experienciaProfesional}}</p>
       </div>
     </div>
   </div>
 
+</div>
+
+<div>
   {{#each-in model.perfil.recuadros as |key item|}}
     <div class="panel panel-default">
       {{#if item.label}}<div class="panel-heading font-weight-600">{{{item.label}}}</div>{{/if}}
