@@ -362,7 +362,11 @@ p.datos-abiertos {
 
 .postulador-paneles .panel-default > .panel-heading {
     font-weight: 900;
-    background-color: #1b2b3a;
+    background-color: #f6921eff;
+}
+
+.panel-default>.panel-heading {
+    background-color: #f6921eff;
 }
 
 .justify {

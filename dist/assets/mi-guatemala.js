@@ -5944,6 +5944,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("mi-guatemala/app")["default"].create({"dataSpreadsheetSourceUrl":"/data-spreadsheet-url","configSpreadsheetSourceUrl":"/config-spreadsheet-url","staticFilesUrl":"http://localhost:6362/static-files/","name":"mi-guatemala","version":"0.0.0+880fadb0"});
+  require("mi-guatemala/app")["default"].create({"dataSpreadsheetSourceUrl":"/data-spreadsheet-url","configSpreadsheetSourceUrl":"/config-spreadsheet-url","staticFilesUrl":"http://localhost:6362/static-files/","name":"mi-guatemala","version":"0.0.0+e238fcc3"});
 }
 //# sourceMappingURL=mi-guatemala.map
