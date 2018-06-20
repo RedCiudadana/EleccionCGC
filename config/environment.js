@@ -27,13 +27,13 @@ module.exports = function(environment) {
       configSpreadsheetSourceUrl: '/config-spreadsheet-url',
 
       // Set null to retrieve data from the spreadsheet live. Otherwhise set the
-      // URL from which to load de dumped static files
+      // URL from which to load de ducgced static files
       // staticFilesUrl: null
-      // staticFilesUrl: 'http://eleccionmp.org/static-files/'
+      // staticFilesUrl: 'http://eleccioncgc.org/static-files/'
     },
 
     disqus: {
-      shortname: 'eleccion-mp'
+      shortname: 'eleccion-cgc'
     },
 
     contentSecurityPolicy: contentSecurityPolicy
@@ -67,7 +67,7 @@ module.exports = function(environment) {
       webPropertyId: 'UA-113727052-1'
     };
 
-    ENV.APP.staticFilesUrl = 'http://contralor.redciudadana.org/static-files/';
+    ENV.APP.staticFilesUrl = 'https://contralor.redciudadana.org/static-files/';
   }
 
   return ENV;
