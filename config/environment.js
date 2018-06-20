@@ -67,7 +67,7 @@ module.exports = function(environment) {
       webPropertyId: 'UA-113727052-1'
     };
 
-    ENV.APP.staticFilesUrl = 'http://localhost:6362/static-files/';
+    ENV.APP.staticFilesUrl = 'http://eleccionmp/static-files/';
   }
 
   return ENV;
