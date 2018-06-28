@@ -33,7 +33,7 @@ module.exports = function(environment) {
     },
 
     disqus: {
-      shortname: 'eleccion-cgc'
+      shortname: 'eleccion-mp'
     },
 
     contentSecurityPolicy: contentSecurityPolicy
