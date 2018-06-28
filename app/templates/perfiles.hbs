@@ -18,6 +18,18 @@
 
         <div class="filters-container">
           <strong>Filtrar por: </strong>
+
+          <label>
+            {{one-way-checkbox
+              esTodo
+              update=(queue
+                (action (mut esTodo))
+                (action 'applyFilter')
+              )
+            }}
+            Todo
+          </label>
+
           <label>
             {{one-way-checkbox
               esMujer
