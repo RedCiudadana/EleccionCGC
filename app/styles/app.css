@@ -1,8 +1,8 @@
 @import 'fonts.css'
-@import 'main.css';
 @import 'responsive.css';
 @import 'ember-power-select-bootstrap.css';
 @import 'ember-cli-spinner.css';
+@import 'main.css';
 
 /*Colores*/
 /*
@@ -113,7 +113,7 @@ body.perfil .container.content-container {
 }
 
 .navbar-brand img {
-    max-height: 40px;
+    max-height: 30px;
 }
 
 .navbar-header {

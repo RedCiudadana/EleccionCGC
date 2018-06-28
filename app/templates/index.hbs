@@ -3,7 +3,7 @@
     <img src="/app/img/slider-texto.png" width="100%" height="auto">
   </div>
 </div>
-<div class="container">
+<div class="container content-container">
   {{!-- Status banner --}}
   {{!-- <div class="row status-banner text-center" style="padding-bottom: 0px;">
     <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
@@ -55,6 +55,17 @@
 
         <div class="filters-container">
           <strong>Filtrar por: </strong>
+          <label>
+            {{one-way-checkbox
+              esTodo
+              update=(queue
+                (action (mut esTodo))
+                (action 'applyFilter')
+              )
+            }}
+            Todo
+          </label>
+
           <label>
             {{one-way-checkbox
               esMujer
