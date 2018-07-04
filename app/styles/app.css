@@ -113,7 +113,7 @@ body.perfil .container.content-container {
 }
 
 .navbar-brand img {
-    max-height: 30px;
+    max-height: 40px;
 }
 
 .navbar-header {
@@ -500,3 +500,13 @@ a:focus {
 .nav-candidator .list-inline > li:first-child a {
     border-left: 1px solid #ddd;
 }
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-size: 16px;
+}
+
+.container>.navbar-header {
+    padding: 10px;
+}
+

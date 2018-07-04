@@ -88,7 +88,7 @@
 <div class="buffer-top-30 row" style="margin-bottom: 30px;">
 
   <div class="col-md-6">
-    <div class="row perfil-container" style="height: 30rem;  margin-right: 2px; border: 1px solid #ddd;">
+    <div class="row perfil-container" style="height: auto;  margin-right: 2px; border: 1px solid #ddd;">
       <div class="col-md-12" style="display:flex;">
           <img
           src="/app/img/logo-libro.png"
@@ -103,7 +103,7 @@
   </div>
 
   <div class="col-md-6">
-    <div class="row perfil-container" style="height: 30rem; margin-left: 2px; border: 1px solid #ddd;">
+    <div class="row perfil-container" style="height: auto; margin-left: 2px; border: 1px solid #ddd;">
       <div class="col-md-12" style="display:flex;">
           <img
           src="/app/img/logo-portafolio.png"
@@ -113,6 +113,21 @@
       </div>
       <div class="col-md-12" style="margin-top: 10px;">
         <p class="justify">{{model.perfil.experienciaProfesional}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="row perfil-container" style="height: auto; margin-left: 2px; border: 1px solid #ddd;">
+      <div class="col-md-12" style="display:flex;">
+          <img
+          src="/app/img/logo-portafolio.png"
+          alt="Experiencia profesional"
+          style="width: 60px; height:60px; margin: 10px 30px 10px 10px;">
+          <h3 style="margin-top:auto;margin-bottom:auto;">Plan de Trabajo</h3>
+      </div>
+      <div class="col-md-12" style="margin-top: 10px;">
+        <p class="justify">{{model.perfil.planTrabajo}}</p>
       </div>
     </div>
   </div>

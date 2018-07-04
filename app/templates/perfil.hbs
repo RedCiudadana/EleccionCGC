@@ -41,12 +41,13 @@
   {{/if}}
 
   {{outlet}}
-</section>
 
-{{#if disqusShortname}}
-  <div class="row bg-color-white">
-    <div class="col-xs-12">
-      {{disqus-comments identifier=model.perfil.disqusIdentifier}}
+  {{#if disqusShortname}}
+    <div class="row bg-color-white">
+      <div class="col-xs-12">
+        {{disqus-comments identifier=model.perfil.disqusIdentifier}}
+      </div>
     </div>
-  </div>
-{{/if}}
+  {{/if}}
+
+</section>
