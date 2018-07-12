@@ -7,25 +7,25 @@
   },
   {
     "key": "logoTitle",
-    "value": "Elección MP",
+    "value": "Elección Contralor",
     "tags": "",
     "observaciones": ""
   },
   {
     "key": "twitterShareLink",
-    "value": "Conoce todo sobre la elección del Fiscal General del Ministerio Publico de Guatemala",
+    "value": "Conoce todo sobre la elección del Contralor General de Cuentas",
     "tags": "",
     "observaciones": ""
   },
   {
     "key": "facebookShareLink",
-    "value": "//www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Feleccionmp.org",
+    "value": "//www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcontralor.redciudadana.org",
     "tags": "",
     "observaciones": ""
   },
   {
     "key": "siteMainTitle",
-    "value": "<div class=\"row text-center\" style=\"padding: 30px 5px;\">\n  <h1 style=\"font-weight: 600; font-size: 38px;\">Conoce todo sobre el proceso de elección del Fiscal General del Ministerio Público de Guatemala</h1>\n</div>",
+    "value": "<div class=\"row text-center\" style=\"padding: 30px 5px;\">\n  <h1 style=\"font-weight: 600; font-size: 38px;\">Conoce todo sobre el proceso de elección del Contralor General de Cuentas</h1>\n</div>",
     "tags": "",
     "observaciones": "Permite HTML"
   },
@@ -91,7 +91,7 @@
   },
   {
     "key": "htmlTitle",
-    "value": "Elección MP - Red Ciudadana",
+    "value": "Elección Contralor General de Cuentas - Red Ciudadana",
     "tags": "",
     "observaciones": ""
   },
@@ -109,19 +109,19 @@
   },
   {
     "key": "procesoEleccionTitulo",
-    "value": "Proceso de elección de Fiscal General del MP",
+    "value": "Proceso de elección de Contralor General de Cuentas.",
     "tags": "",
     "observaciones": ""
   },
   {
     "key": "procesoEleccionPasoActual",
-    "value": "<div class=\"text-left\"><span style=\"font-size: 18px;\">Paso actual:</span></div>\n<div><span style=\"font-size: 26px; margin-left: 5px; width: 100%\">Presidente designa Fiscal</span></div>",
+    "value": "<div class=\"text-left\"><span style=\"font-size: 18px;\">Paso actual:</span></div>\n<div><span style=\"font-size: 26px; margin-left: 5px; width: 100%\">Conformación de Comisión de Postulación</span></div>",
     "tags": "",
     "observaciones": ""
   },
   {
     "key": "procesoEleccionSiguientePaso",
-    "value": "<div class=\"text-left\"><span style=\"font-size: 18px;\">Siguiente paso:</span></div>\n<div><span style=\"font-size: 26px; margin-left: 5px;\">#FiscalIntachable inicia trabajo en MP</span></div>",
+    "value": "<div class=\"text-left\"><span style=\"font-size: 18px;\">Siguiente paso:</span></div>\n<div><span style=\"font-size: 26px; margin-left: 5px;\">Convocatoria de candidatos</span></div>",
     "tags": "",
     "observaciones": ""
   }

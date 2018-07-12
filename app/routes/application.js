@@ -173,6 +173,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
 
     return Ember.RSVP.hash({
       perfiles: this.store.findAll('perfil'),
+      diputados: this.store.findAll('postulador-comision'),
       config: spreadsheet.fetchConfig('configuracion')
         .then((configuracion) => {
           let configObject = Ember.Object.create();

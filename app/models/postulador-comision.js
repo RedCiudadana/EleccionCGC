@@ -13,6 +13,8 @@ export default Model.extend({
   educacion: attr(),
   fechaNacimiento: attr(),
   lugarNacimiento: attr(),
+  sexo: attr(),
+  estado: attr(),
   partidoPostulante: belongsTo('partido'),
   partidoActual: belongsTo('partido'),
   email: attr(),
@@ -45,5 +47,28 @@ export default Model.extend({
 
   disqusIdentifier: Ember.computed('id', function() {
     return `postulador-${this.get('id')}`;
-  })
+  }),
+
+    selector: Ember.computed('sexo', 'estado', function() {
+    let returnValue = '';
+
+    if (this.get('sexo') === 'Masculino') {
+      returnValue += ' hombre';
+    }
+
+    if (this.get('sexo') === 'Femenino') {
+      returnValue += ' mujer';
+    }
+
+    if (this.get('estado') === 'Descalificado') {
+      returnValue += ' descalificado';
+    }
+
+    if (this.get('estado') === 'En proceso') {
+      returnValue += ' enProceso';
+    }
+
+    return returnValue;
+  }),
+
 });
