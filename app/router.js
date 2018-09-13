@@ -27,6 +27,7 @@ Router.map(function() {
 
   this.route('metodologia');
   this.route('tabla-gradacion');
+  this.route('centro-votacion');
 });
 
 export default Router;
