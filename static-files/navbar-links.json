@@ -8,6 +8,10 @@
     "title": "Tabla de gradación"
   },
   {
+    "route": "centros-votacion",
+    "title": "Centro de votación"
+  },
+  {
     "route": "comision",
     "title": "Comisión de Postulación"
   },
