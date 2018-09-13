@@ -122,6 +122,10 @@ body.perfil .container.content-container {
     background-color: #f7941eff;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    font-size: 14px;
+}
+
 .navbar-inverse .navbar-nav > li > a:hover {
     color: white;
 }
