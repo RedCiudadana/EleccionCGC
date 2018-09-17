@@ -94,12 +94,6 @@ body.perfil .container.content-container {
     color: white;
 }
 
-.nav > li > a {
-    padding-left: 35px;
-    padding-right: 35px;
-    font-size: 18px;
-}
-
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }
