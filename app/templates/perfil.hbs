@@ -1,6 +1,15 @@
 {{set-body-class 'perfil'}}
 
 <section id="election" style="margin-top: 35px;" class="container" >
+  <div class="social-media visible-xs">
+    {{twitter-share
+        count='horizontal'
+        hashtags='EleccionCGC'
+        text=applicationConfig.twitterShareLink
+        via='Redxguate'
+    }}
+    {{facebook-share fb-layout='button_count'}}
+  </div>
   {{#if model.config.perfilFuncionalidades}}
     <div style="background-color: #ffffff; margin-bottom: 25px;">
       <div class="nav-candidator" style="border: 1px solid #ddd;">
@@ -25,7 +34,7 @@
                 {{/if}}
               {{/active-link}}
             {{/each}}
-            <li class="social-media">
+            <li class="social-media hidden-xs">
               {{twitter-share
                   count='horizontal'
                   hashtags='EleccionMP'
