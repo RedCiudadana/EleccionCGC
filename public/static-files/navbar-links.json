@@ -1,11 +1,15 @@
 [
   {
-    "route": "perfiles",
-    "title": "Diputados"
+    "route": "about",
+    "title": "¿Qué es?"
   },
   {
     "route": "perfiles",
-    "title": "¿Quién es mi representante?"
+    "title": "Candidatos"
+  },
+  {
+    "route": "comision",
+    "title": "Comisión de Postulación"
   },
   {
     "route": "metodologia",

@@ -4,6 +4,9 @@ import { computed } from '@ember/object';
 
 export default Controller.extend({
 
+  esMujer: true,
+  esHombre: true,
+
   currentSelector: computed(
     'esMujer',
     'esHombre',
@@ -41,15 +44,24 @@ export default Controller.extend({
     }
   ),
 
+  _applyFilter() {
+
+    var $container = $('#portfolio');
+
+    $container.isotope({transitionDuration: '0.65s'});
+
+    $container.isotope({filter: this.get('currentSelector')});
+
+    console.log(this.get('currentSelector'));
+    console.log(this.get('esMujer'));
+    console.log(this.get('esHombre'));
+
+    return false;
+  },
+
   actions: {
     applyFilter() {
-      var $container = $('#portfolio');
-
-      $container.isotope({transitionDuration: '0.65s'});
-
-      $container.isotope({filter: this.get('currentSelector')});
-
-      return false;
+      return this._applyFilter();
     }
   }
 });

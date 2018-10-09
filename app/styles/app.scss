@@ -1,17 +1,19 @@
 // COLORS
 
-$primary: #163f7f;
-$secondary: #182047;
+$primary: #f7941e;
+$secondary: #f7941e;
 $success: #00ac56;
 $warning: #f6ab40;
 $info: #26a5dc;
 $dark: #1e2b3d;
 
-$navbar-color: #3a3a3a;
+$navbar-color: white;
 
-$footer-background-color: $secondary;
+$footer-background-color: #1b2b3a;
 $footer-color: #ffffff;
 $border-radius: 10px;
 
 @import "ember-bootstrap/bootstrap";
 @import "mi-guatemala";
+
+@import "ember-power-select-bootstrap";

@@ -49,6 +49,7 @@ Router.map(function() {
   this.route('contacto');
 
   this.route('resultados');
+  this.route('about');
 });
 
 export default Router;
