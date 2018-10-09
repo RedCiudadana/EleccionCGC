@@ -125,5 +125,14 @@ export default Profile.extend({
     */
   fotoPartido: computed('fotoUrlPartido', function() {
     return this.get('fotoUrlPartido');
-  })
+  }),
+
+  /**
+  * Notas evaluadas
+  **/
+  notaAreaEvaluada1: attr(),
+  notaAreaEvaluada2: attr(),
+  notaAreaEvaluada3: attr(),
+  notaAreaEvaluada4: attr(),
+  resultadosEvaluacion: attr()
 });

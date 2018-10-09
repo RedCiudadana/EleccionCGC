@@ -87,7 +87,74 @@
     <div class="col-12 col-md-6">
       <div class="panel">
         <div class="header"><h4>Tabla de gradación</h4></div>
-        <div class="body"></div>
+        <div class="body">
+          <div class="row p-4 p-4">
+            <div class="col-3 col-md-2 text-center icon-container">
+              {{!-- <i class="fa fa-graduation-cap"></i> --}}
+              <img src="app/img/logo-aspectos-academicos.png" class="img-responsive center" />
+            </div>
+            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+              Aspectos académicos
+            </div>
+            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada1}}</span>
+            </div>
+          </div>
+
+          <div class="row p-4">
+            <div class="col-3 col-md-2 text-center icon-container">
+              {{!-- <i class="fa fa-suitcase"></i> --}}
+              <img src="app/img/logo-aspectos-profesionales.png" class="img-responsive center" />
+            </div>
+            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+              Aspectos profesionales
+            </div>
+            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.notaAreaEvaluada2}}</span>
+            </div>
+          </div>
+
+          <div class="row p-4">
+            <div class="col-3 col-md-2 text-center icon-container">
+              {{!-- <i class="fa fa-check"></i> --}}
+              <img src="app/img/logo-proyeccion-humana.png" class="img-responsive center" />
+            </div>
+            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+              Proyección humana e idoneidad
+            </div>
+            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.notaAreaEvaluada3}}</span>
+            </div>
+          </div>
+
+          <div class="row p-4">
+            <div class="col-3 col-md-2 text-center icon-container">
+              {{!-- <i class="fa fa-handshake-o"></i> --}}
+              <img src="app/img/logo-cualidades-eticas.png" class="img-responsive center" />
+            </div>
+            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+              Cualidades éticas y de probidad
+            </div>
+            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded">
+                {{#if model.perfil.notaAreaEvaluada4}}
+                  <li class="fa fa-check"></li>
+                {{else}}
+                  <li class="fa fa-times"></li>
+                {{/if}}
+              </span>
+            </div>
+          </div>
+
+          <div class="row p-4">
+            <div class="col-10 col-offset-3 text-container">
+              Puntaje total
+            </div>
+            <div class="col-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.resultadosEvaluacion}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-12 col-md-6">
