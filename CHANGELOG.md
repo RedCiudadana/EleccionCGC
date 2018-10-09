@@ -14,6 +14,7 @@ Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 - Added route about.
 - Ember's addons: router-action-helper, ember-power-select, ember-composable-helpers.
 - Added ember-power-select in index.hbs
+- Added helper add.
 
 ### Changed
 - Change color: primary, secondary, footer-color, navbar-color in app.scss.
@@ -21,3 +22,4 @@ Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 - Navbar-links.
 - The slider is hidden in mobile viewport.
 - Metadata in index.html.
+- Adding tachas, experiencia profesional, experiencia academica, plan de trabajo, tabla de gradacion in perfil.index.hbs.
