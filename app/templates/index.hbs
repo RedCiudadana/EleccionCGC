@@ -1,44 +1,72 @@
 <img src="/img/slider.png" alt="" width="100%" class="d-none d-md-block">
 <div class="container">
 {{!-- PowerSelect --}}
-	<div class="row justify-content-center my-5">
-		<div class="col-12 col-md-8">
-			{{#power-select
-				selected=currentCandidato
-				options=model.perfiles
-				onchange=(route-action 'selectPerfil')
-				searchField='nombre'
-				placeholder='Busca a tu candidato o candidata'
-				noMatchesMessage='Sin resultados'
-				as |candidato|
-				}}
-			<strong>{{candidato.nombre}}</strong>
-			{{/power-select}}
-		</div>
-	</div>
+    <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-8">
+            {{#power-select
+                selected=currentCandidato
+                options=model.perfiles
+                onchange=(route-action 'selectPerfil')
+                searchField='nombre'
+                placeholder='Busca a tu candidato o candidata'
+                noMatchesMessage='Sin resultados'
+                as |candidato|
+                }}
+            <strong>{{candidato.nombre}}</strong>
+            {{/power-select}}
+        </div>
+    </div>
 {{!-- Filters --}}
-	<div class="row">
-		<div class="col-10 text-center">
-			{{!-- GENERO --}}
-			{{#bs-dropdown class="m-2 rounded" as |dd|}}
-				{{#dd.button class="bg-primary"}}<img src="app/img/icon-genere.png">Genero <span class="caret"></span>{{/dd.button}}
-				{{#dd.menu as |menu|}}
-				  {{#menu.item}}
-				    <label>
-				    <input type="checkbox" checked={{esMujer}} onclick={{queue (action (mut esMujer) value="target.checked") (action 'applyFilter')}}>
-				    Femenino
-				    </label>
-				  {{/menu.item}}
-				  {{#menu.item}}
-				    <label>
-				    <input type="checkbox" checked={{esHombre}} onclick={{queue (action (mut esHombre) value="target.checked") (action 'applyFilter')}}>
-				    Masculino
-				    </label>
-				  {{/menu.item}}
-				{{/dd.menu}}
-			{{/bs-dropdown}}
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <strong>Filtrar por:</strong>
+            <label>
+            {{one-way-checkbox
+                esMujer
+                update=(queue
+                (action (mut esMujer))
+                (action 'applyFilter'))
+            }}
+            Mujer
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Hombre
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            En proceso
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Finalista
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Descalifacado
+            </label>
+        </div>
+    </div>
 </div>
 {{!-- Portfolio --}}
 {{#if model.config.useFrontPortfolioVisualization}}
@@ -49,6 +77,5 @@
       onDidInsertElement=(action 'applyFilter')
     }}
     </div>
-  </div>    
+  </div>
 {{/if}}
-    

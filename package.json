@@ -49,6 +49,7 @@
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-metrics": "^0.12.1",
+    "ember-one-way-controls": "^3.1.0",
     "ember-one-way-select": "^4.0.0",
     "ember-page-title": "^4.0.5",
     "ember-power-select": "^2.0.9",

@@ -4396,6 +4396,16 @@ ember-metrics@^0.12.1:
     ember-getowner-polyfill "^2.0.0"
     ember-runtime-enumerable-includes-polyfill "^2.0.0"
 
+ember-one-way-controls@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ember-one-way-controls/-/ember-one-way-controls-3.1.0.tgz#5037d024aea0466a1dd787a79fbfd82b5df8c71e"
+  integrity sha512-SH/BcT7WWUWBuabOZ6TEPLrpG/FxL7MEIcXWjSzA6E0gCsIrB87jJL5uM12cwBjF9o3hEDUN/y5zNu1D8Wfomw==
+  dependencies:
+    ember-cli-babel "^6.0.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-invoke-action "^1.5.0"
+    ember-runtime-enumerable-includes-polyfill "^2.0.0"
+
 ember-one-way-select@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/ember-one-way-select/-/ember-one-way-select-4.0.0.tgz#4da2a8b8abb3360feaa69099ea31989ad3068e89"
