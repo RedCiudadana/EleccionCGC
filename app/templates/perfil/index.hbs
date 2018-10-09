@@ -50,27 +50,50 @@
       <div class="panel">
         <div class="header d-flex"><h4>Biografía</h4></div>
         <div class="body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores ad rem laudantium repellendus voluptas. Ea et voluptatibus, doloribus perspiciatis eum mollitia ullam fugiat quaerat quis explicabo rem sequi modi incidunt.
+          {{model.perfil.biografia}}
         </div>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-md-6">
       <div class="panel">
         <div class="header"><h4>Experiencia academica</h4></div>
         <div class="body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed deserunt rerum provident, cum placeat aut laudantium magni, consequatur beatae natus eveniet, libero temporibus explicabo molestias veniam dolor esse omnis laboriosam?
+          {{model.perfil.experienciaAcademica}}
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-12 col-md-6">
       <div class="panel">
-        <div class="header"><h4>Experiencia academica</h4></div>
+        <div class="header"><h4>Experiencia profesional</h4></div>
         <div class="body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis voluptatem, impedit quaerat animi unde natus tempore voluptates, error, aut possimus quisquam saepe sint quo dolores placeat? Sit, nihil, amet.
+          {{model.perfil.experienciaProfesional}}
         </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="panel">
+        <div class="header"><h4>Plan de trabajo</h4></div>
+        <div class="body">
+          {{model.perfil.planTrabajo}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="panel">
+        <div class="header"><h4>Tabla de gradación</h4></div>
+        <div class="body"></div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="panel">
+        <div class="header"><h4>Tachas</h4></div>
+        <div class="body">{{model.perfil.tachas}}</div>
       </div>
     </div>
   </div>

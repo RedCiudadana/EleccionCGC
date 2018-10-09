@@ -76,12 +76,20 @@ export default Profile.extend({
   experienciaProfesional: attr('string'),
 
   /**
-   * Experiencia en derechos humanos.
+   * Experiencia academica.
    *
-   * @property experienciaEnDH
+   * @property experienciaAcademica
    * @type String
    */
-  experienciaEnDH: attr('string'),
+  experienciaAcademica: attr('string'),
+
+  /**
+   * Plan de trabajo.
+   *
+   * @property planTrabajo
+   * @type String
+   */
+  planTrabajo: attr('string'),
 
   /**
    * Información general. Campos para mostrar en información general. 
