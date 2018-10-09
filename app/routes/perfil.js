@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import { hash } from 'rsvp';
 import { A } from '@ember/array';
+import Config from '../config/environment';
 
 /**
  * Perfil Route
@@ -91,7 +92,8 @@ export default Route.extend({
         .then((registros) => {
           return Ember.A(registros)
             .filterBy('perfilId', perfil.get('id'));
-        })
+        }),
+        disqusShortname: Config.disqus.shortname,
     });
   },
 
