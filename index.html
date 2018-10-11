@@ -1,67 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--[if lt IE 9]>
-      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
+    
+<meta name="mi-guatemala/config/environment" content="%7B%22modulePrefix%22%3A%22mi-guatemala%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22metricsAdapters%22%3A%5B%7B%22name%22%3A%22GoogleAnalytics%22%2C%22environments%22%3A%5B%22production%22%2C%22development%22%5D%2C%22config%22%3A%7B%22id%22%3A%22UA-XXXX-Y%22%2C%22trace%22%3Afalse%2C%22sendHitTask%22%3Atrue%7D%7D%5D%2C%22APP%22%3A%7B%22dataSpreadsheetSourceUrl%22%3A%22/data-spreadsheet-url%22%2C%22configSpreadsheetSourceUrl%22%3A%22/config-spreadsheet-url%22%2C%22staticFilesUrl%22%3Anull%2C%22name%22%3A%22mi-guatemala%22%2C%22version%22%3A%220.0.0+a063155c%22%7D%2C%22disqus%22%3A%7B%22shortname%22%3A%22eleccion-mp%22%7D%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27none%27%22%2C%22script-src%22%3A%22%27self%27%20www.google-analytics.com%22%2C%22font-src%22%3A%22%27self%27%22%2C%22connect-src%22%3A%22%27self%27%20www.google-analytics.com%22%2C%22img-src%22%3A%22%27self%27%22%2C%22style-src%22%3A%22%27self%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22googleAnalytics%22%3A%7B%22webPropertyId%22%3A%22UA-101167670-1%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
 
-    <!-- Facebook stuff -->
-    <!-- <meta property="og:title" content="Elección CGC" />
-    <meta property="og:description" content="Encuentra aquí todos los datos sobre la elección del Fiscal General del MP. ¡Infórmate, interactúa e incide!">
-    <meta property="og:type" content="website">
+    <link integrity="" rel="stylesheet" href="/assets/vendor-bc68c555448031707c124281d54da67f.css">
+    <link integrity="" rel="stylesheet" href="/assets/mi-guatemala-0d4895a4eb396540708a31ef896620a7.css">
+
+    
+
+    <!-- HTML Meta Tags -->
+    <title>Eleccion CGC</title>
+    <meta name="description" content="Eleccion CGC es una aplicación destinada a la transparencia en materia de funcionarios públicos.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="http://redciudadana.org/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@RedXGuate">
+    <meta name="twitter:title" content="Eleccion CGC - Red Ciudadana">
+    <meta name="twitter:description" content="Eleccion CGC es una aplicación destinada a la transparencia en materia de funcionarios públicos. ">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/RedCiudadana/EleccionCGC/gh-pages/app/img/open-graph-image.png">
+    <meta name="twitter:image:alt" content="Eleccion CGC">
+    <meta name="twitter:author" content="https://twitter.com/RedxGuate">
+
+    <!-- Facebook - Open graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Conoce todo sobre la elección del Controlar General de Cuentas">
+    <meta property="og:site_name" content="Eleccion CGC - Red Ciudadana">
     <meta property="og:url" content="http://eleccioncgc.org/">
-    <meta property="og:image" content="https://cdn.rawgit.com/RedCiudadana/EleccionCGC/gh-pages/app/img/logo-eleccion-mp-fb-020ddac9dc302a49c9647546eb241f02.png">
-    <meta property="fb:app_id" content="1077578065594362" /> -->
+    <meta property="og:image" content="http://raw.githubusercontent.com/RedCiudadana/EleccionCGC/gh-pages/app/img/open-graph-image.png">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/RedCiudadana/EleccionCGC/gh-pages/app/img/open-graph-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Eleccion CGC por Red Ciudadana" />
+    <meta property="article:author" content="https://www.facebook.com/Redciudadanagt/">
 
-    <!-- Twitter stuff -->
-<!--     <meta name="twitter:title" content="Elección CGC" />
-    <meta name="twitter:description" content="Encuentra aquí todos los datos sobre la elección del Fiscal General del MP. ¡Infórmate, interactúa e incide!" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@RedxGuate" />
-    <meta name="twitter:image" content="https://cdn.rawgit.com/RedCiudadana/EleccionCGC/gh-pages/app/img/logo-eleccion-mp-fb-020ddac9dc302a49c9647546eb241f02.png" />
- -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title">
+<link rel="yandex-tableau-widget" href="/yandex-browser-manifest.json">
+<link rel="icon" type="image/png" sizes="228x228" href="/coast-228x228-eb80a788808063219259a4a12cea9d1a.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#fff">
+<meta name="application-name">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/apple-touch-startup-image-320x460-1ff85b09c876fe38d1bf866d591ecb7f.png">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-640x920-637f72d72cd97d149d875d2ab56f96bb.png">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-640x1096-904bce7361f1f48b9b2c15b61286c427.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-750x1294-0b9fbec645e6ceb47afa9e9b08685dc8.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/apple-touch-startup-image-1182x2208-b18c759c145b4ac3ccefe3d4737b3a1f.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/apple-touch-startup-image-1242x2148-245608958b0c8efe7f182ab4d56092b4.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/apple-touch-startup-image-748x1024-4f0f4258cafe21b352637bd939f5fa98.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/apple-touch-startup-image-768x1004-769daf191b9239e2de8e529798cfa8e3.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-1496x2048-a85646b6efa0a833960e933378197393.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/apple-touch-startup-image-1536x2008-bbf144ce8b304d0b761d8cef0ee23649.png">
+</head>
+  <body>
     
-<meta name="mi-guatemala/config/environment" content="%7B%22modulePrefix%22%3A%22mi-guatemala%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22dataSpreadsheetSourceUrl%22%3A%22/data-spreadsheet-url%22%2C%22configSpreadsheetSourceUrl%22%3A%22/config-spreadsheet-url%22%2C%22staticFilesUrl%22%3A%22http%3A//eleccioncgc.org/static-files/%22%2C%22name%22%3A%22mi-guatemala%22%2C%22version%22%3A%220.0.0+dd0c4e68%22%7D%2C%22disqus%22%3A%7B%22shortname%22%3A%22eleccion-mp%22%7D%2C%22contentSecurityPolicy%22%3A%7B%22connect-src%22%3A%22%27self%27%20https%3A//*.google.com%22%7D%2C%22googleAnalytics%22%3A%7B%22webPropertyId%22%3A%22UA-113727052-1%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-113727052-1', 'auto');
-</script>
-
-    <!-- Temas CSS de candidatos.gt -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="/css/chosen.min-9ed7949517efe0261d4fb753686e2432.css">
-    <link rel="stylesheet" href="/css/main-c8ba55ea4f047cd36268b69c62bdfcf7.css">
-    <link rel="stylesheet" href="/css/guatemala-theme-4c909e2a87c2e096ea5991861066c7eb.css">
-
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,900' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link integrity="" rel="stylesheet" href="/assets/vendor-187830b6aaa94af03e8c22360433cc5e.css">
-    <link integrity="" rel="stylesheet" href="/assets/mi-guatemala-b526293cae06ec8d377a1a9a94aad5e9.css">
-
-    <link rel="shortcut icon" href="https://cdn.rawgit.com/RedCiudadana/EleccionCGC/gh-pages/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://cdn.rawgit.com/RedCiudadana/EleccionCGC/gh-pages/favicon.ico" type="image/x-icon">
-
-    
-
-  </head>
-  <body class="stretched no-transition">
-
-    
-
-    <script src="/assets/vendor-34792ef804f4d1423ac3c468bad5aeaf.js"></script>
-    <script src="/assets/mi-guatemala-50440f1252a05199601357e8c7fd0b9f.js"></script>
+    <script src="/assets/vendor-d0f7248d4c1ae921e392a28351d52a42.js"></script>
+    <script src="/assets/mi-guatemala-be558c3acfe3aca380c1aa8854b56f03.js"></script>
 
     <div id="ember-bootstrap-wormhole"></div>
 <div id="ember-basic-dropdown-wormhole"></div>

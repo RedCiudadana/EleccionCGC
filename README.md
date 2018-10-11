@@ -1,3 +1,4 @@
-# EleccionCGC
+# MiGuatemala
 
-EleccionCGC es un app desarrollada sobre [MiGuatemala](https://github.com/RedCiudadana/Miguatemala).
+MiGuatemala es una aplicación destinada fomentar la transparencia en materia de funcionarios
+e instituciones públicas.
