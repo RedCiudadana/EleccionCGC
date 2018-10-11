@@ -1,87 +1,179 @@
-import Magistrate from './magistrate';
+import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-import { belongsTo } from 'ember-data/relationships';
 import { computed } from '@ember/object';
 
 /**
  * Model para diputados de la comisión.
  *
  * @class Model.Commision-deputies
- * @extends Model.Profile
  */
-export default Magistrate.extend({
-  // Associations
+export default Model.extend({
 
   /**
-   * Partido postulante, con el que obtuvo el cargo o fue elegido.
-   *
-   * @property partidoPostulante
-   * @type partido
-   */
-  partidoPostulante: belongsTo('partido'),
+  * Nombre.
+  *
+  * @property nombre
+  * @type String
+  */
+  nombre: attr(),
 
   /**
-   * Partido actual.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  partidoActual: belongsTo('partido'),
+  * Nombre de la institución.
+  *
+  * @property institucion
+  * @type String
+  */
+  institucion: attr(),
 
   /**
-   * Institución.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  institucion: attr('string'),
+  * Cargo.
+  *
+  * @property cargo
+  * @type String
+  */
+  cargo: attr(),
 
   /**
-   * Twitter de la institución.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  twInstitucion: attr('string'),
+  * Profesión.
+  *
+  * @property profesion
+  * @type String
+  */
+  profesion: attr(),
 
   /**
-   * Facebook de la institución.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  fbInstitucion: attr('string'),
+  * Nivel de educación.
+  *
+  * @property educacion
+  * @type String
+  */
+  educacion: attr(),
 
   /**
-   * Foto de la institución.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  fotoInstitucionUrl: attr('string'),
+  * Fecha de nacimiento.
+  *
+  * @property fechaNacimiento
+  * @type String
+  */
+  fechaNacimiento: attr(),
 
   /**
-   * Correo electrónico de la institución.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  emailInstitucion: attr('string'),
+  * Lugar de nacimiento.
+  *
+  * @property lugarNacimiento
+  * @type String
+  */
+  lugarNacimiento: attr(),
 
   /**
-   * Pagina web de la institución.
-   *
-   * @property partidoActual
-   * @type partido
-   */
-  webInstitucion: attr('string'),
+  * Sexo
+  *
+  * @property sexo
+  * @type String
+  */
+  sexo: attr(),
 
   /**
-  * Foto del perfil.
+  * Estado
+  *
+  * @property estado
+  * @type String
+  */
+  estado: attr(),
+
+  /**
+  * URL de la foto.
+  *
+  * @property fotoURL
+  * @type String
+  */
+  fotoUrl: attr(),
+
+  /**
+  * Biografia.
+  *
+  * @property biografia
+  * @type String
+  */
+  biografia: attr(),
+
+  /**
+  * Trayectoria
+  *
+  * @property trayectoria
+  * @type String
+  */
+  trayectoria: attr(),
+
+  /**
+  * URL del perfil de Facebook.
+  *
+  * @property fb
+  * @type String
+  */
+  fb: attr(),
+
+  /**
+  * URL del perfil de Twitter.
+  *
+  * @property tw
+  * @type String
+  */
+  tw: attr(),
+
+  /**
+  * Correo electrónico.
+  *
+  * @property email
+  * @type String
+  */
+  email: attr(),
+
+  /**
+  * URL de la foto de la institución.
+  *
+  * @property fotoInstitucionUrl
+  * @type String
+  */
+  fotoInstitucionUrl: attr(),
+
+  /**
+  * URL del perfil de la institucion de Facebook.
+  *
+  * @property fbInstitucion
+  * @type String
+  */
+  fbInstitucion: attr(),
+
+  /**
+  * URL del perfil de la institucion de Twitter.
+  *
+  * @property twInstitucion
+  * @type String
+  */
+  twInstitucion: attr(),
+
+  /**
+  * Correo electrónico de la institución.
+  *
+  * @property emailInstitucion
+  * @type String
+  */
+  emailInstitucion: attr(),
+
+  /**
+  * Dirección web de la institución.
+  *
+  * @property webInstitucion
+  * @type String
+  */
+  webInstitucion: attr(),
+
+  /**
+  * Foto para usar en la app.
   *
   * @property fotoPerfil
   * @type String
-  * @default "images/Magistrado.jpg"
   */
   fotoPerfil: computed('fotoUrl', function() {
     if (this.get('fotoUrl') !== '') {
@@ -92,6 +184,14 @@ export default Magistrate.extend({
       } else {
         return 'https://raw.githubusercontent.com/RedCiudadana/Recursos-Contralor/gh-pages/Candidatos/Fotos/candidata.png';
       }
+    }
+  }),
+
+  badgeColor: computed('institucion', function() {
+    if (this.get('institucion').includes('Universidad')) {
+      return 'bg-warning';
+    } else {
+      return 'bg-info';
     }
   })
 });
