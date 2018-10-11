@@ -1,26 +1,80 @@
-<div id="portfolio" class="portfolio grid-container portfolio-5 portfolio-masonry clearfix">
-  {{#each model.diputados as |diputado|}}
-    <article class="portfolio-item pf-media {{diputado.institucionSelector}}">
-
-      <div class="portfolio-image">
-        {{#link-to 'comision.diputado' diputado.id}}
-          <img alt="{{diputado.cargoNombreCompleto}}" src="{{diputado.fotoPerfil}}" />
-        {{/link-to}}
-      </div>
-
-      <div class="portfolio-desc">
-        <h3>
-          {{#link-to 'comision.diputado' diputado.id}}
-            {{diputado.nombre}}
-          {{/link-to}}
-        </h3>
-        <span>
-          {{#link-to 'comision.diputado' diputado.id}}
-            {{diputado.cargoNombreCorto}}
-          {{/link-to}}
-        </span>
-      </div>
-
-    </article>
-  {{/each}}
+<div class="container">
+{{!-- PowerSelect --}}
+    <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-8">
+            {{#power-select
+                selected=currentCandidato
+                options=model.perfiles
+                onchange=(route-action 'selectPerfil')
+                searchField='nombre'
+                placeholder='Busca a tu candidato o candidata'
+                noMatchesMessage='Sin resultados'
+                as |candidato|
+                }}
+            <strong>{{candidato.nombre}}</strong>
+            {{/power-select}}
+        </div>
+    </div>
+{{!-- Filters --}}
+    <div class="row">
+        <div class="col-12 text-center">
+            <strong>Filtrar por:</strong>
+            <label>
+            {{one-way-checkbox
+                esMujer
+                update=(queue
+                (action (mut esMujer))
+                (action 'applyFilter'))
+            }}
+            Mujer
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Hombre
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            En proceso
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Finalista
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Descalifacado
+            </label>
+        </div>
+    </div>
 </div>
+{{!-- Portfolio --}}
+{{#if model.config.useFrontPortfolioVisualization}}
+  <div class="container-fluid bg-white">
+    <div>
+    {{front-portfolio
+      perfiles=model.perfiles
+      onDidInsertElement=(action 'applyFilter')
+    }}
+    </div>
+  </div>
+{{/if}}
