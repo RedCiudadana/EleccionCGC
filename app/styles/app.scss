@@ -18,6 +18,19 @@ $border-radius: 10px;
 
 @import "ember-power-select-bootstrap";
 
+// NAVBAR
+.navbar-brand {
+    margin-left: 200px;
+}
+
+@include media-breakpoint-up(sm) {
+    .navbar-brand {
+        margin-left: 0px;
+    }
+}
+
+// TABLA DE GRADACION
+
 #tabla-gradacion {
     font-weight: bold;
 
@@ -38,6 +51,8 @@ $border-radius: 10px;
         margin-right: 10px;
     }
 }
+
+// PANEL
 
 .panel {
     .header {
