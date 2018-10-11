@@ -60,7 +60,7 @@
   <div class="row">
     <div class="col-12">
       <div class="panel">
-        <div class="header d-flex"><h4>Biografía</h4></div>
+        <div class="header d-flex"><img src="img/logo-documento.png" alt="Biografía" height="75"><h4>Biografía</h4></div>
         <div class="body">
           {{model.perfil.biografia}}
         </div>
@@ -71,7 +71,7 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <div class="panel">
-        <div class="header"><h4>Experiencia academica</h4></div>
+        <div class="header"><img src="img/logo-libro.png" alt="Experiencia academica" height="75"><h4>Experiencia academica</h4></div>
         <div class="body">
           {{model.perfil.experienciaAcademica}}
         </div>
@@ -79,7 +79,7 @@
     </div>
     <div class="col-12 col-md-6">
       <div class="panel">
-        <div class="header"><h4>Experiencia profesional</h4></div>
+        <div class="header"><img src="img/logo-portafolio.png" alt="Experiencia profesional" height="75"><h4>Experiencia profesional</h4></div>
         <div class="body">
           {{model.perfil.experienciaProfesional}}
         </div>
@@ -87,7 +87,7 @@
     </div>
     <div class="col-12 col-md-6">
       <div class="panel">
-        <div class="header"><h4>Plan de trabajo</h4></div>
+        <div class="header"><img src="img/logo-portafolio.png" alt="Plan de trabajo" height="75"><h4>Plan de trabajo</h4></div>
         <div class="body">
           {{model.perfil.planTrabajo}}
         </div>
@@ -96,14 +96,14 @@
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div id="tabla-gradacion" class="col-12 col-md-6">
       <div class="panel">
         <div class="header"><h4>Tabla de gradación</h4></div>
         <div class="body">
           <div class="row p-4 p-4">
             <div class="col-3 col-md-2 text-center icon-container">
               {{!-- <i class="fa fa-graduation-cap"></i> --}}
-              <img src="app/img/logo-aspectos-academicos.png" class="img-responsive center" />
+              <img src="img/logo-aspectos-academicos.png" class="img-responsive center" />
             </div>
             <div class="col-7 col-md-8 col-md-offset-0 text-container">
               Aspectos académicos
@@ -116,7 +116,7 @@
           <div class="row p-4">
             <div class="col-3 col-md-2 text-center icon-container">
               {{!-- <i class="fa fa-suitcase"></i> --}}
-              <img src="app/img/logo-aspectos-profesionales.png" class="img-responsive center" />
+              <img src="img/logo-aspectos-profesionales.png" class="img-responsive center" />
             </div>
             <div class="col-7 col-md-8 col-md-offset-0 text-container">
               Aspectos profesionales
@@ -129,7 +129,7 @@
           <div class="row p-4">
             <div class="col-3 col-md-2 text-center icon-container">
               {{!-- <i class="fa fa-check"></i> --}}
-              <img src="app/img/logo-proyeccion-humana.png" class="img-responsive center" />
+              <img src="img/logo-proyeccion-humana.png" class="img-responsive center" />
             </div>
             <div class="col-7 col-md-8 col-md-offset-0 text-container">
               Proyección humana e idoneidad
@@ -142,7 +142,7 @@
           <div class="row p-4">
             <div class="col-3 col-md-2 text-center icon-container">
               {{!-- <i class="fa fa-handshake-o"></i> --}}
-              <img src="app/img/logo-cualidades-eticas.png" class="img-responsive center" />
+              <img src="img/logo-cualidades-eticas.png" class="img-responsive center" />
             </div>
             <div class="col-7 col-md-8 col-md-offset-0 text-container">
               Cualidades éticas y de probidad
@@ -159,10 +159,10 @@
           </div>
 
           <div class="row p-4">
-            <div class="col-10 col-offset-3 text-container">
+            <div class="col-10 col-offset-3 text-container pt-2">
               Puntaje total
             </div>
-            <div class="col-2" style="padding-left: 5px; padding-right: 5px;">
+            <div class="col-2 p-0 pt-2">
               <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.resultadosEvaluacion}}</span>
             </div>
           </div>
