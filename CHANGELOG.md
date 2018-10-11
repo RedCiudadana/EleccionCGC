@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 
+## [0.1.1] - 2018-10-
+### Changed
+- Change filters in comision.
+
 ## [0.1.0] - 2018-10-11
 ### Added
 - Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
