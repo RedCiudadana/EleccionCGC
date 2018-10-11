@@ -58,10 +58,6 @@ export default Controller.extend({
 
     $container.isotope({filter: this.get('currentSelector')});
 
-    console.log(this.get('currentSelector'));
-    console.log(this.get('esMujer'));
-    console.log(this.get('esHombre'));
-
     return false;
   },
 

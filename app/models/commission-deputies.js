@@ -187,10 +187,16 @@ export default Model.extend({
     }
   }),
 
-  badgeColor: computed('institucion', function() {
+  badgeColor: computed('institucion', 'id', function() {
     if (this.get('institucion').includes('Universidad') || this.get('institucion') === 'USAC') {
       return 'bg-warning';
-    } else {
+    }
+
+    if (this.get('id').includes('ccee')) {
+      return 'bg-blue';
+    }
+
+    if (this.get('id').includes('cpa')) {
       return 'bg-info';
     }
   }),
@@ -202,27 +208,24 @@ export default Model.extend({
   * @type String
   * @default ""
   */
-  selector: computed('sexo', 'estado', function() {
+  selector: computed('id', function() {
     let returnValue = '';
 
-    if (this.get('sexo') === 'Masculino') {
-      returnValue += ' hombre';
+    if (this.get('id').includes('presidente')) {
+      returnValue += ' presidente';
     }
 
-    if (this.get('sexo') === 'Femenino') {
-      returnValue += ' mujer';
+
+    if (this.get('id').includes('ccee')) {
+      returnValue += ' ccee';
     }
 
-    if (this.get('estado') === 'Descalificado') {
-      returnValue += ' descalificado';
+    if (this.get('id').includes('cpa')) {
+      returnValue += ' cpa';
     }
 
-    if (this.get('estado') === 'En proceso') {
-      returnValue += ' enProceso';
-    }
-
-    if (this.get('estado') === 'Finalista') {
-      returnValue += ' finalista';
+    if (this.get('id').includes('decano')) {
+      returnValue += ' decano';
     }
 
     return returnValue;

@@ -8,37 +8,39 @@ export default Controller.extend({
   esHombre: true,
 
   currentSelector: computed(
-    'esMujer',
-    'esHombre',
-    'estaEnProceso',
-    'estaDescalificado',
+    'presidente',
+    'ccee',
+    'cpa',
+    'decano',
     function() {
       if (
-        !this.get('esMujer')
-            && !this.get('esHombre')
-            && !this.get('estaEnProceso')
-            && !this.get('estaDescalificado')
+        !this.get('presidente')
+            && !this.get('ccee')
+            && !this.get('cpa')
+            && !this.get('decano')
       ) {
         return '*';
       }
 
       let selectors = [];
 
-      if (this.get('esMujer')) {
-        selectors.push('.mujer');
+      if (this.get('presidente')) {
+        selectors.push('.presidente');
       }
 
-      if (this.get('esHombre')) {
-        selectors.push('.hombre');
+      if (this.get('ccee')) {
+        selectors.push('.ccee');
       }
 
-      if (this.get('estaEnProceso')) {
-        selectors.push('.enProceso');
+      if (this.get('cpa')) {
+        selectors.push('.cpa');
       }
 
-      if (this.get('estaDescalificado')) {
-        selectors.push('.descalificado');
+      if (this.get('decano')) {
+        selectors.push('.decano');
       }
+
+
 
       return selectors.join(', ');
     }
@@ -51,10 +53,6 @@ export default Controller.extend({
     $container.isotope({transitionDuration: '0.65s'});
 
     $container.isotope({filter: this.get('currentSelector')});
-
-    console.log(this.get('currentSelector'));
-    console.log(this.get('esMujer'));
-    console.log(this.get('esHombre'));
 
     return false;
   },

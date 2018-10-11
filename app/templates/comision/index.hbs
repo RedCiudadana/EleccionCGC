@@ -21,48 +21,39 @@
             <strong>Filtrar por:</strong>
             <label>
             {{one-way-checkbox
-                esMujer
+                presidente
                 update=(queue
-                (action (mut esMujer))
+                (action (mut presidente))
                 (action 'applyFilter'))
             }}
-            Mujer
+            Presidente de la Comisión
             </label>
             <label>
             {{one-way-checkbox
-                esHombre
+                ccee
                 update=(queue
-                (action (mut esHombre))
+                (action (mut ccee))
                 (action 'applyFilter'))
             }}
-            Hombre
+            Representantes CCEE (Colegio de Economistas)
             </label>
             <label>
             {{one-way-checkbox
-                estaEnProceso
+                cpa
                 update=(queue
-                (action (mut estaEnProceso))
+                (action (mut cpa))
                 (action 'applyFilter'))
             }}
-            En proceso
+            Representantes CPA (Colegio Contadores Públicos y Auditores)
             </label>
             <label>
             {{one-way-checkbox
-                esFinalista
+                decano
                 update=(queue
-                (action (mut esFinalista))
+                (action (mut decano))
                 (action 'applyFilter'))
             }}
-            Finalista
-            </label>
-            <label>
-            {{one-way-checkbox
-                estaDescalificado
-                update=(queue
-                (action (mut estaDescalificado))
-                (action 'applyFilter'))
-            }}
-            Descalificado
+            Decanos de las universidades
             </label>
         </div>
     </div>
