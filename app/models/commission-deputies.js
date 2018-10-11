@@ -193,5 +193,38 @@ export default Model.extend({
     } else {
       return 'bg-info';
     }
+  }),
+
+  /**
+  * Selector para Isotope. Genera un 'String' con etiquetas para poder filtrar elementos desde el HTML con Isotope.
+  *
+  * @property selector
+  * @type String
+  * @default ""
+  */
+  selector: computed('sexo', 'estado', function() {
+    let returnValue = '';
+
+    if (this.get('sexo') === 'Masculino') {
+      returnValue += ' hombre';
+    }
+
+    if (this.get('sexo') === 'Femenino') {
+      returnValue += ' mujer';
+    }
+
+    if (this.get('estado') === 'Descalificado') {
+      returnValue += ' descalificado';
+    }
+
+    if (this.get('estado') === 'En proceso') {
+      returnValue += ' enProceso';
+    }
+
+    if (this.get('estado') === 'Finalista') {
+      returnValue += ' finalista';
+    }
+
+    return returnValue;
   })
 });

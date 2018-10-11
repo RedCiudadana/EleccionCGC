@@ -12,12 +12,14 @@ export default Controller.extend({
     'esHombre',
     'estaEnProceso',
     'estaDescalificado',
+    'esFinalista',
     function() {
       if (
         !this.get('esMujer')
             && !this.get('esHombre')
             && !this.get('estaEnProceso')
             && !this.get('estaDescalificado')
+            && !this.get('esFinalista')
       ) {
         return '*';
       }
@@ -38,6 +40,10 @@ export default Controller.extend({
 
       if (this.get('estaDescalificado')) {
         selectors.push('.descalificado');
+      }
+
+      if (this.get('esFinalista')) {
+        selectors.push('.finalista');
       }
 
       return selectors.join(', ');

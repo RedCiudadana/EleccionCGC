@@ -16,6 +16,7 @@ Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 - Added ember-power-select in index.hbs
 - Added helper add.
 - Added diputados in application model.
+- Badge colors in comission.
 
 ### Changed
 - Changed color: primary, secondary, footer-color, navbar-color in app.scss.
@@ -24,6 +25,6 @@ Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 - The slider is hidden in mobile viewport.
 - Update metadata in index.html.
 - Adding tachas, experiencia profesional, experiencia academica, plan de trabajo, tabla de gradacion in perfil.index.hbs.
-- Changed model commission-deputies.
+- Changed model commission-deputies. No extends of profile.
 - Changed route, controller and template comision.
 - Re-style perfil.index.hbs.
