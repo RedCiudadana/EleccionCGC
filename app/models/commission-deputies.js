@@ -188,7 +188,7 @@ export default Model.extend({
   }),
 
   badgeColor: computed('institucion', function() {
-    if (this.get('institucion').includes('Universidad')) {
+    if (this.get('institucion').includes('Universidad') || this.get('institucion') === 'USAC') {
       return 'bg-warning';
     } else {
       return 'bg-info';
