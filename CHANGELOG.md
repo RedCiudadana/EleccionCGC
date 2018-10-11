@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 
-## [0.1.0] - 2018-09-17
+## [0.1.0] - 2018-10-11
 ### Added
 - Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 - Slider in index route.
@@ -15,11 +15,15 @@ Merge from https://github.com/RedCiudadana/MiGuatemala master - v0.4.2.
 - Ember's addons: router-action-helper, ember-power-select, ember-composable-helpers.
 - Added ember-power-select in index.hbs
 - Added helper add.
+- Added diputados in application model.
 
 ### Changed
-- Change color: primary, secondary, footer-color, navbar-color in app.scss.
+- Changed color: primary, secondary, footer-color, navbar-color in app.scss.
 - Brand-logo image.
 - Navbar-links.
 - The slider is hidden in mobile viewport.
-- Metadata in index.html.
+- Update metadata in index.html.
 - Adding tachas, experiencia profesional, experiencia academica, plan de trabajo, tabla de gradacion in perfil.index.hbs.
+- Changed model commission-deputies.
+- Changed route, controller and template comision.
+- Re-style perfil.index.hbs.
