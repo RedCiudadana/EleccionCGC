@@ -182,6 +182,7 @@ export default Route.extend({
     return hash({
       // partidos: this.store.findAll('partido'),
       perfiles: this.store.findAll('magistrate'),
+      diputados: this.store.findAll('commission-deputies'),
       config: spreadsheet.fetchConfig('configuracion')
         .then((configuracion) => {
           let configObject = EmberObject.create();

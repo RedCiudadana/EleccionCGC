@@ -4,7 +4,7 @@
         <div class="col-12 col-md-8">
             {{#power-select
                 selected=currentCandidato
-                options=model.perfiles
+                options=model.diputados
                 onchange=(route-action 'selectPerfil')
                 searchField='nombre'
                 placeholder='Busca a tu candidato o candidata'
@@ -71,8 +71,8 @@
 {{#if model.config.useFrontPortfolioVisualization}}
   <div class="container-fluid bg-white">
     <div>
-    {{front-portfolio
-      perfiles=model.perfiles
+    {{front-portfolio-deputies
+      perfiles=model.diputados
       onDidInsertElement=(action 'applyFilter')
     }}
     </div>

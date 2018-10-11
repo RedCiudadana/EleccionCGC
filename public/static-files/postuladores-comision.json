@@ -1,6 +1,6 @@
 [
   {
-    "id": "presidente-umg",
+    "id": "presidente-um",
     "nombre": "Félix Javier Serrano",
     "institucion": "Universidad Mesoamericana",
     "cargo": "",
@@ -23,7 +23,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "decano-ufm",
+    "id": "ccee-id",
     "nombre": "Jeovanni Ulises Navarro Velasquez",
     "institucion": "Integridad y Desarrollo",
     "cargo": "",
@@ -46,7 +46,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "ccee-mapa",
     "nombre": "Jorge Luis Ríos Villatoro",
     "institucion": "MAPA",
     "cargo": "",
@@ -69,7 +69,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "ccee-pau",
     "nombre": "Erick Orlando Hernández Ruíz",
     "institucion": "Plataforma Académica Universitaria",
     "cargo": "",
@@ -92,7 +92,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "ccee-ip",
     "nombre": "Roberto Alfonso Franco",
     "institucion": "Innovación / Profesional",
     "cargo": "",
@@ -115,7 +115,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-ip",
     "nombre": "Oscar Solorzano",
     "institucion": "Innovación / Profesional",
     "cargo": "",
@@ -138,7 +138,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-id1",
     "nombre": "Dominica Matamba",
     "institucion": "Integridad y Desarrollo",
     "cargo": "",
@@ -161,7 +161,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-id2",
     "nombre": "Rony Ayala",
     "institucion": "Integridad y Desarrollo",
     "cargo": "",
@@ -184,7 +184,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-id3",
     "nombre": "Ivana Rojas",
     "institucion": "Integridad y Desarrollo",
     "cargo": "",
@@ -207,7 +207,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-mapa",
     "nombre": "Sergio Waldemar Máx Moya",
     "institucion": "MAPA",
     "cargo": "",
@@ -230,7 +230,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-mapa",
     "nombre": "Eleazar Pinzón",
     "institucion": "MAPA",
     "cargo": "",
@@ -253,7 +253,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "cpa-fortaleza",
     "nombre": "Marco Tulio Bautista",
     "institucion": "Fortaleza",
     "cargo": "",
@@ -276,7 +276,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-usac",
     "nombre": "Luis Antonio Suárez Roldan",
     "institucion": "USAC",
     "cargo": "",
@@ -299,7 +299,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-umg",
     "nombre": "Sue Jionsehyon Kim Morales",
     "institucion": "Universidad Mariano Galvez",
     "cargo": "",
@@ -322,7 +322,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-url",
     "nombre": "Martha Perez de Chen",
     "institucion": "Universidad Rafael Landivar",
     "cargo": "",
@@ -345,7 +345,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-ufm",
     "nombre": "Monica Rio Nevado de Zelaya",
     "institucion": "Universidad Francisco Marroquin",
     "cargo": "",
@@ -368,7 +368,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-udv",
     "nombre": "Gerson Tobar Piril",
     "institucion": "Universidad Da Vinci",
     "cargo": "",
@@ -391,7 +391,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-upana",
     "nombre": "Ronaldo Antonio Girón Díaz",
     "institucion": "Universidad Panamericana",
     "cargo": "",
@@ -414,7 +414,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-um",
     "nombre": "José Roberto Vielman Deyet",
     "institucion": "Universidad Mesoamericana",
     "cargo": "",
@@ -437,7 +437,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-occidente",
     "nombre": "Arlindo Antonio Velásquez Fuentes",
     "institucion": "Universidad de Occidente",
     "cargo": "",
@@ -460,7 +460,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-rural",
     "nombre": "Enmer Saúl Luch Estrada",
     "institucion": "Univerisdad Rural",
     "cargo": "",
@@ -483,7 +483,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-regional",
     "nombre": "Pendiente",
     "institucion": "Universidad Regional",
     "cargo": "",
@@ -506,7 +506,7 @@
     "webInstitucion": ""
   },
   {
-    "id": "",
+    "id": "decano-internaciones",
     "nombre": "Marco Livio Díaz Reyes",
     "institucion": "Universidad Internaciones",
     "cargo": "",
