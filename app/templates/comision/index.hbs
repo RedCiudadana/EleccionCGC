@@ -4,7 +4,7 @@
         <div class="col-12 col-md-8">
             {{#power-select
                 selected=currentCandidato
-                options=model.diputados
+                options=model.perfiles
                 onchange=(route-action 'selectPerfil')
                 searchField='nombre'
                 placeholder='Busca a tu candidato o candidata'
@@ -39,27 +39,27 @@
             </label>
             <label>
             {{one-way-checkbox
-                esHombre
+                estaEnProceso
                 update=(queue
-                (action (mut esHombre))
+                (action (mut estaEnProceso))
                 (action 'applyFilter'))
             }}
             En proceso
             </label>
             <label>
             {{one-way-checkbox
-                esHombre
+                esFinalista
                 update=(queue
-                (action (mut esHombre))
+                (action (mut esFinalista))
                 (action 'applyFilter'))
             }}
             Finalista
             </label>
             <label>
             {{one-way-checkbox
-                esHombre
+                estaDescalificado
                 update=(queue
-                (action (mut esHombre))
+                (action (mut estaDescalificado))
                 (action 'applyFilter'))
             }}
             Descalifacado

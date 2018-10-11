@@ -1,9 +1,79 @@
+<div class="container">
+{{!-- PowerSelect --}}
+    <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-8">
+            {{#power-select
+                selected=currentCandidato
+                options=model.perfiles
+                onchange=(route-action 'selectPerfil')
+                searchField='nombre'
+                placeholder='Busca a tu candidato o candidata'
+                noMatchesMessage='Sin resultados'
+                as |candidato|
+                }}
+            <strong>{{candidato.nombre}}</strong>
+            {{/power-select}}
+        </div>
+    </div>
+{{!-- Filters --}}
+    <div class="row">
+        <div class="col-12 text-center">
+            <strong>Filtrar por:</strong>
+            <label>
+            {{one-way-checkbox
+                esMujer
+                update=(queue
+                (action (mut esMujer))
+                (action 'applyFilter'))
+            }}
+            Mujer
+            </label>
+            <label>
+            {{one-way-checkbox
+                esHombre
+                update=(queue
+                (action (mut esHombre))
+                (action 'applyFilter'))
+            }}
+            Hombre
+            </label>
+            <label>
+            {{one-way-checkbox
+                estaEnProceso
+                update=(queue
+                (action (mut estaEnProceso))
+                (action 'applyFilter'))
+            }}
+            En proceso
+            </label>
+            <label>
+            {{one-way-checkbox
+                esFinalista
+                update=(queue
+                (action (mut esFinalista))
+                (action 'applyFilter'))
+            }}
+            Finalista
+            </label>
+            <label>
+            {{one-way-checkbox
+                estaDescalificado
+                update=(queue
+                (action (mut estaDescalificado))
+                (action 'applyFilter'))
+            }}
+            Descalifacado
+            </label>
+        </div>
+    </div>
+</div>
 {{!-- Portfolio --}}
 {{#if model.config.useFrontPortfolioVisualization}}
   <div class="container-fluid bg-white">
     <div>
     {{front-portfolio
       perfiles=model.perfiles
+      onDidInsertElement=(action 'applyFilter')
     }}
     </div>
   </div>
