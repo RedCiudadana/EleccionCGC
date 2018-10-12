@@ -170,6 +170,14 @@ export default Model.extend({
   webInstitucion: attr(),
 
   /**
+   * Información general. Campos para mostrar en información general. 
+   *
+   * @property informacionGeneral
+   * @type informacion-general
+   */
+  informacionGeneral: attr('informacion-general'),
+
+  /**
   * Foto para usar en la app.
   *
   * @property fotoPerfil
