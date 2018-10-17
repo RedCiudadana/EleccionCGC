@@ -3,7 +3,7 @@
   <div class="row border my-4">
     <div class="col-md-3 p-4">
       <img
-          src="{{model.diputado.fotoPerfil}}"
+          src="{{model.diputado.fotodiputado}}"
           alt="{{model.diputado.nombre}}"
           border="0"
           class="img-responsive center-block w-100"
@@ -15,46 +15,16 @@
         <h2>{{model.diputado.nombre}}</h2>
         <table class="table">
           <tbody>
+            {{#each-in model.diputado.informacionGeneral as |key item|}}
               <tr>
                 <td class="border-0 p-0">
                   <small>
-                    <strong>Cargo:</strong>
-                    {{model.diputado.cargo}}
+                    {{#if item.label}} <strong>{{{item.label}}}</strong> {{/if}}
+                    {{{item.value}}}
                   </small>
                 </td>
               </tr>
-              <tr>
-                <td class="border-0 p-0">
-                  <small>
-                    <strong>Institución:</strong>
-                    {{model.diputado.institucion}}
-                  </small>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-0 p-0">
-                  <small>
-                    <strong>Profesión:</strong>
-                    {{model.diputado.profesion}}
-                  </small>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-0 p-0">
-                  <small>
-                    <strong>Fecha de Nacimiento:</strong>
-                    {{model.diputado.fechaNacimiento}}
-                  </small>
-                </td>
-              </tr>
-              <tr>
-                <td class="border-0 p-0">
-                  <small>
-                    <strong>Lugar de Nacimiento:</strong>
-                    {{model.diputado.lugarNacimiento}}
-                  </small>
-                </td>
-              </tr>
+            {{/each-in}}
           </tbody>
         </table>
       </div>
@@ -93,6 +63,33 @@
         <div class="header d-flex"><img src="img/logo-documento.png" alt="Biografía" height="75"><h4>Biografía</h4></div>
         <div class="body">
           {{model.diputado.biografia}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="panel">
+        <div class="header"><img src="img/logo-libro.png" alt="Experiencia academica" height="75"><h4>Experiencia academica</h4></div>
+        <div class="body">
+          {{model.diputado.experienciaAcademica}}
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="panel">
+        <div class="header"><img src="img/logo-portafolio.png" alt="Experiencia profesional" height="75"><h4>Experiencia profesional</h4></div>
+        <div class="body">
+          {{model.diputado.experienciaProfesional}}
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="panel">
+        <div class="header"><img src="img/logo-portafolio.png" alt="Plan de trabajo" height="75"><h4>Plan de trabajo</h4></div>
+        <div class="body">
+          {{model.diputado.planTrabajo}}
         </div>
       </div>
     </div>
