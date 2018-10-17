@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row border my-4">
-    <div class="col-md-3 p-4">
+    <div class="col-lg-3 p-1 p-lg-4">
       <img
           src="{{model.perfil.fotoPerfil}}"
           alt="{{model.perfil.nombre}}"
@@ -10,7 +10,7 @@
         >
     </div>
 
-    <div class="col-md-5 p-4 d-block d-sm-flex">
+    <div class="col-lg-5 p-1 p-lg-4 d-block d-sm-flex">
       <div class="w-50 text-left">
         <h2>{{model.perfil.nombre}}</h2>
         <table class="table">
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 social-side text-center d-block p-4">
+    <div class="col-lg-4 social-side text-center d-block p-1 p-lg-4">
       <div>
         <img src="{{model.perfil.fotoUrlPartido}}" alt="{{model.perfil.partidoactual}}">
         {{#each documentosDisponibles as |documento|}}
@@ -69,7 +69,7 @@
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-lg-6">
       <div class="panel">
         <div class="header"><img src="img/logo-libro.png" alt="Experiencia academica" height="75"><h4>Experiencia academica</h4></div>
         <div class="body">
@@ -77,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-lg-6">
       <div class="panel">
         <div class="header"><img src="img/logo-portafolio.png" alt="Experiencia profesional" height="75"><h4>Experiencia profesional</h4></div>
         <div class="body">
@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-lg-6">
       <div class="panel">
         <div class="header"><img src="img/logo-portafolio.png" alt="Plan de trabajo" height="75"><h4>Plan de trabajo</h4></div>
         <div class="body">
@@ -96,58 +96,54 @@
   </div>
 
   <div class="row">
-    <div id="tabla-gradacion" class="col-12 col-md-6">
+    <div id="tabla-gradacion" class="col-12 col-lg-6">
       <div class="panel">
         <div class="header"><h4>Tabla de gradación</h4></div>
-        <div class="body">
-          <div class="row p-4 p-4">
-            <div class="col-3 col-md-2 text-center icon-container">
-              {{!-- <i class="fa fa-graduation-cap"></i> --}}
+        <div class="body p-0 p-sm-2">
+          <div class="row p-1 p-lg-4 text-center">
+            <div class="col-12 col-lg-2 text-center icon-container">
               <img src="img/logo-aspectos-academicos.png" class="img-responsive center" />
             </div>
-            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+            <div class="col-12 col-lg-8 col-lg-offset-0 text-container">
               Aspectos académicos
             </div>
-            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
+            <div class="col-12 col-lg-2 my-2" style="padding-left: 5px; padding-right: 5px;">
               <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada1}}</span>
             </div>
           </div>
 
-          <div class="row p-4">
-            <div class="col-3 col-md-2 text-center icon-container">
-              {{!-- <i class="fa fa-suitcase"></i> --}}
+          <div class="row p-1 p-lg-4 text-center">
+            <div class="col-12 col-lg-2 text-center icon-container">
               <img src="img/logo-aspectos-profesionales.png" class="img-responsive center" />
             </div>
-            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+            <div class="col-12 col-lg-8 col-lg-offset-0 text-container">
               Aspectos profesionales
             </div>
-            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.notaAreaEvaluada2}}</span>
+            <div class="col-12 col-lg-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada2}}</span>
             </div>
           </div>
 
-          <div class="row p-4">
-            <div class="col-3 col-md-2 text-center icon-container">
-              {{!-- <i class="fa fa-check"></i> --}}
+          <div class="row p-1 p-lg-4 text-center">
+            <div class="col-12 col-lg-2 text-center icon-container">
               <img src="img/logo-proyeccion-humana.png" class="img-responsive center" />
             </div>
-            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+            <div class="col-12 col-lg-8 col-lg-offset-0 text-container">
               Proyección humana e idoneidad
             </div>
-            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.notaAreaEvaluada3}}</span>
+            <div class="col-12 col-lg-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada3}}</span>
             </div>
           </div>
 
-          <div class="row p-4">
-            <div class="col-3 col-md-2 text-center icon-container">
-              {{!-- <i class="fa fa-handshake-o"></i> --}}
+          <div class="row p-1 p-lg-4 text-center">
+            <div class="col-12 col-lg-2 text-center icon-container">
               <img src="img/logo-cualidades-eticas.png" class="img-responsive center" />
             </div>
-            <div class="col-7 col-md-8 col-md-offset-0 text-container">
+            <div class="col-12 col-lg-8 col-lg-offset-0 text-container">
               Cualidades éticas y de probidad
             </div>
-            <div class="col-2 col-md-2" style="padding-left: 5px; padding-right: 5px;">
+            <div class="col-12 col-lg-2 my-2" style="padding-left: 5px; padding-right: 5px;">
               <span class="badge-primary text-white py-2 px-3 rounded">
                 {{#if model.perfil.notaAreaEvaluada4}}
                   <li class="fa fa-check"></li>
@@ -158,49 +154,53 @@
             </div>
           </div>
 
-          <div class="row p-4">
-            <div class="col-10 col-offset-3 text-container pt-2">
+          <div class="row p-1 p-lg-4 text-center">
+            <div class="col-12 col-lg-10 col-lg-offset-0 text-container">
               Puntaje total
             </div>
-            <div class="col-2 p-0 pt-2">
-              <span class="badge-primary text-white py-2 px-3 rounded">{{model.perfil.resultadosEvaluacion}}</span>
+            <div class="col-12 col-lg-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.resultadosEvaluacion}}</span>
             </div>
           </div>
+
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
+
+    <div class="col-12 col-lg-6">
       <div class="panel">
         <div class="header"><h4>Tachas</h4></div>
-        <div class="body">
+        <div class="px-5">
           {{#if (eq 0 tachas)}}
             <div class="row tabla-tachas-header">
               <div class="col-12 text-center">No se encontraron tachas asociadas al candidato</div>
             </div>
           {{else}}
-            <div class="row tabla-tachas-header hidden-xs">
-              <div class="col-1 col-md-1 text-center icon-container">
+            <div class="row tabla-tachas-header d-none d-lg-flex">
+              <div class="col-1 col-lg-1 text-center icon-container">
                 No.
               </div>
-              <div class="col-6 col-md-7 col-md-offset-0 text-container">
+              <div class="col-6 col-lg-7 col-sm-offset-0 text-container">
                 Tacha
               </div>
-              <div class="col-4 col-md-4">
+              <div class="col-4 col-lg-4">
                 Presentada por
               </div>
             </div>
-
             {{#each model.tachas as |tacha index|}}
-              <a href={{tacha.tachaUrl}} target="_blank" class="row">
+              <a href={{tacha.tachaUrl}} target="_blank" class="row my-3">
                 <div class="col-1 text-center icon-container">
+                  <strong class="d-block d-lg-none">No:</strong>
                   {{add index 1}}
                 </div>
 
-                <div class="col-7 col-md-7 col-md-offset-0 text-container">
+                <div class="col-12 col-lg-7 col-lg-offset-0 text-container">
+                  <strong class="d-block d-lg-none">Descripcion:</strong>
                   {{{tacha.tacha}}}
                 </div>
 
-                <div class="col-4 col-md-4">
+                <div class="col-12 col-lg-4">
+                  <strong class="d-block d-lg-none">Presentado por:</strong>
                   {{{tacha.presentadoPor}}}
                 </div>
               </a>
