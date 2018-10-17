@@ -140,10 +140,9 @@ export default Route.extend({
               });
             });
 
-            let diputadoSerializer = this.store.serializerFor('diputado-comision');
+            let diputadoSerializer = this.store.serializerFor('commission-deputies');
 
-            diputadoSerializer.set('informacionGeneralFields', A());
-            diputadoSerializer.set('frenteAFrenteFields', A());
+            diputadoSerializer.set('informacionGeneralFields', diputadoDataArray);
           }),
 
         /**
