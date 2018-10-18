@@ -10,7 +10,7 @@
         >
     </div>
 
-    <div class="col-md-5 p-4 d-block d-sm-flex">
+    <div class="col-md-6 p-4 d-block d-sm-flex">
       <div class="w-50 text-left">
         <h2>{{model.diputado.nombre}}</h2>
         <table class="table">
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 social-side text-center d-block p-4">
+    <div class="col-md-3 social-side text-center d-block p-4">
       <div>
         <img src="{{model.diputado.fotoUrlPartido}}" alt="{{model.diputado.partidoactual}}">
         {{#each documentosDisponibles as |documento|}}
@@ -46,12 +46,12 @@
           </p>
         {{/each}}
       </div>
-      <div class="d-flex mt-3">
-        <div class="mr-2">
-          <a href="{{mode.diputado.tw}}" target="_blank"><i class="fa fa-twitter mr-1"></i>{{model.diputado.tw}}</a>
+      <div class="d-block mt-3">
+        <div class="my-4">
+          <a href="{{mode.diputado.tw}}" target="_blank"><i class="fa fa-twitter mr-1"></i><br>{{model.diputado.tw}}</a>
         </div>
         <div>
-          <a href="{{model.diputado.fb}}" target="_blank"><i class="fa fa-facebook mr-1"></i>{{model.diputado.nombre}}</a>
+          <a href="{{model.diputado.fb}}" target="_blank"><i class="fa fa-facebook mr-1"></i><br>{{model.diputado.nombre}}</a>
         </div>
       </div>
     </div>
@@ -63,33 +63,6 @@
         <div class="header d-flex"><img src="img/logo-documento.png" alt="Biografía" height="75"><h4>Biografía</h4></div>
         <div class="body">
           {{model.diputado.biografia}}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header"><img src="img/logo-libro.png" alt="Experiencia academica" height="75"><h4>Experiencia academica</h4></div>
-        <div class="body">
-          {{model.diputado.experienciaAcademica}}
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header"><img src="img/logo-portafolio.png" alt="Experiencia profesional" height="75"><h4>Experiencia profesional</h4></div>
-        <div class="body">
-          {{model.diputado.experienciaProfesional}}
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header"><img src="img/logo-portafolio.png" alt="Plan de trabajo" height="75"><h4>Plan de trabajo</h4></div>
-        <div class="body">
-          {{model.diputado.planTrabajo}}
         </div>
       </div>
     </div>

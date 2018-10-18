@@ -1,21 +1,11 @@
 <section id="election">
-  <div class="row breadscrumb-social hidden-xs">
-    <div class="col-md-9">
-      {{!-- TODO: Fix direct access functionality --}}
-      {{bread-crumbs tagName="ul" outputStyle="bootstrap" linkable=true}}
-    </div>
-
-    {{!-- <div class="col-md-3">
-      <div class="row social-button">
-        <div class="col-md-4">
-          {{twitter-share count='horizontal' hashtags='CandiDATOSgt'}}
-        </div>
-        <div class="col-md-4">
-          {{facebook-share fb-layout='button_count'}}
-        </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="text-right px-5 py-2">
+        {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
+        {{#fb-share-button quote=config.twitterShareLink hashtags='MiGuatemala'}}Share{{/fb-share-button}}
       </div>
-    </div> --}}
+    </div>
   </div>
-
   {{outlet}}
 </section>
