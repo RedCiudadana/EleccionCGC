@@ -50,7 +50,7 @@ module.exports = function(environment) {
 
       // Set null to retrieve data from the spreadsheet live. Otherwhise set the
       // URL from which to load de dumped static files
-      staticFilesUrl: null
+      staticFilesUrl: 'http://eleccioncgc.org/static-files/'
       // staticFilesUrl: 'http://192.168.250.206:6360/static-files/'
       // staticFilesUrl: 'http://localhost:6360/static-files/'
     },
