@@ -108,6 +108,7 @@ export default Route.extend({
          * Setear la información de recuadros del perfil mediante la parametrización
          * proveniente de la configuración
          */
+
         spreadsheetService
           .fetchConfig('perfil-recuadros-configuracion')
           .then((configuracionData) => {
@@ -126,8 +127,6 @@ export default Route.extend({
           }),
 
         // Información general de diputado
-        // TODO: Evaluar pertinencia, ya que es una funcionalidad específica de
-        // Elección PDH
         spreadsheetService
           .fetchConfig('diputado-informacion-general-configuracion')
           .then((configuracionData) => {
@@ -174,6 +173,7 @@ export default Route.extend({
    * @method model
    * @return {Object} Datos de nuestro aplicación, perfiles y datos de configuración.
    */
+
   model() {
     const spreadsheet = this.get('spreadsheets');
     const _routing = this.get('_routing');
