@@ -29,6 +29,11 @@ module.exports = function(environment) {
       }
     },
 
+    pageTitle: {
+      replace: false,
+      separator: " | "
+    },
+
     metricsAdapters: [
       {
         name: 'GoogleAnalytics',
