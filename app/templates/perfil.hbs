@@ -1,62 +1,61 @@
-{{set-body-class 'perfil'}}
+{{title model.perfil.nombre replace=true}}
 
-<section id="election" style="margin-top: 35px;" class="container" >
-  <div class="social-media visible-xs">
-    {{twitter-share
-        count='horizontal'
-        hashtags='EleccionCGC'
-        text=applicationConfig.twitterShareLink
-        via='Redxguate'
-    }}
-    {{facebook-share fb-layout='button_count'}}
-  </div>
+<section id="perfil" class="my-4">
+
+  <div class="container">
   {{#if model.config.perfilFuncionalidades}}
-    <div style="background-color: #ffffff; margin-bottom: 25px;">
-      <div class="nav-candidator" style="border: 1px solid #ddd;">
-        <nav>
-          <ul class="list-inline">
-            {{#each model.config.perfilFuncionalidades as |link|}}
-              {{#active-link}}
-                {{#if link.link}}
-                  <a href="{{link.link}}" title="{{link.title}}">
-                    {{#if link.iconClass}}
-                      <i class="{{link.iconClass}}"></i>
+    <div class="row">
+      <div class="col-12">
+        <div class="d-block d-md-none text-right">
+          {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
+          {{#fb-share-button quote=config.twitterShareLink hashtags='MiGuatemala'}}Share{{/fb-share-button}}
+        </div>
+        <div class="nav-candidator border">
+          <nav>
+            <ul class="list-inline m-0 d-md-flex">
+              {{#each model.config.perfilFuncionalidades as |link|}}
+                    {{#if link.link}}
+                        <a href="{{link.link}}" title="{{link.title}}">
+                          {{#if link.iconClass}}
+                            <i class="{{link.iconClass}}"></i>
+                          {{/if}}
+                          {{link.name}}
+                        </a>
+                    {{else}}
+                      {{#link-to-wrapper link.route title=link.title}}
+                          {{#if link.iconClass}}
+                            <i class="{{link.iconClass}}"></i>
+                          {{/if}}
+                          {{link.name}}
+                      {{/link-to-wrapper}}
                     {{/if}}
-                    {{link.name}}
-                  </a>
-                {{else}}
-                  {{#link-to link.route title=link.title}}
-                    {{#if link.iconClass}}
-                      <i class="{{link.iconClass}}"></i>
-                    {{/if}}
-                    {{link.name}}
-                  {{/link-to}}
-                {{/if}}
-              {{/active-link}}
-            {{/each}}
-            <li class="social-media hidden-xs">
-              {{twitter-share
-                  count='horizontal'
-                  hashtags='EleccionMP'
-                  text=applicationConfig.twitterShareLink
-                  via='Redxguate'
-              }}
-              {{facebook-share fb-layout='button_count'}}
-            </li>
-          </ul>
-        </nav>
+              {{/each}}
+              <li class="px-3 ml-auto d-none d-md-block">
+                {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
+                {{#fb-share-button quote=config.twitterShareLink hashtags='MiGuatemala'}}Share{{/fb-share-button}}
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   {{/if}}
 
   {{outlet}}
 
-  {{#if disqusShortname}}
-    <div class="row bg-color-white">
-      <div class="col-xs-12">
-        {{disqus-comments identifier=model.perfil.disqusIdentifier}}
+  <div class="row">
+    <div class="col-12">
+      <div class="panel">
+        <div class="header d-flex">
+          <img src="img/icon-disqus.png" alt="" class="image60x60"><h3 class="my-auto mx-5">Comentarios</h3>
+        </div>
+        <div class="body">
+            {{disqus-comments identifier=model.perfil.disqusIdentifier}}
+        </div>
       </div>
     </div>
-  {{/if}}
+  </div>
+
+</div>
 
 </section>

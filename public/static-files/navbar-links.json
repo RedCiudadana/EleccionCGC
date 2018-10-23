@@ -1,15 +1,11 @@
 [
   {
+    "route": "about",
+    "title": "¿Qué es?"
+  },
+  {
     "route": "perfiles",
     "title": "Candidatos"
-  },
-  {
-    "route": "tabla-gradacion",
-    "title": "Tabla de gradación"
-  },
-  {
-    "route": "centros-votacion",
-    "title": "Centro de votación"
   },
   {
     "route": "comision",

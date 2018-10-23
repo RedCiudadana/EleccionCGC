@@ -1,182 +1,81 @@
-<div class="container-fluid">
-  <div id="banner" class="row">
-    <img src="/app/img/slider-texto.png" width="100%" height="auto">
-  </div>
-</div>
-<div class="container content-container">
-  {{!-- Status banner --}}
-  <div class="row status-banner text-center" style="padding-bottom: 0px;">
-    <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
-      <div style="background-color: #1b2b3a; color: #ffffff; padding: 18px; font-weight: 600;">
-        <span style="font-size: 34px;">
-          {{{model.config.procesoEleccionTitulo}}}
-        </span>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-6 visible-xs" style="background-color: #ffc80f; color: #ffffff; padding: 18px;">
-      <div class="col-md-12">
-        {{{model.config.procesoEleccionPasoActual}}}
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-6 visible-xs" style="background-color: #75bbcc; color: #ffffff; padding: 18px;">
-      {{{model.config.procesoEleccionSiguientePaso}}}
-    </div>
-  </div>
-  {{!-- Siguiente paso --}}
-  <div class="row row-eq-height status-banner text-center hidden-xs" style="padding-top: 0px;">
-    <div class="col-xs-12 col-md-6" style="background-color: #ffc80f; color: #ffffff; padding: 18px;">
-      <div class="col-md-12">
-        {{{model.config.procesoEleccionPasoActual}}}
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-6" style="background-color: #75bbcc; color: #ffffff; padding: 18px;">
-      {{{model.config.procesoEleccionSiguientePaso}}}
-    </div>
-  </div>
-  {{#if model.config.useFrontFilterWidget}}
-    <div class="row search-container-row">
-      <div class="search-container search-and-filter">
-        <div class="search-container" style="text-align: center;">
-          {{#power-select
-            selected=currentCandidato
-            options=model.perfiles
-            onchange=(route-action 'selectPerfil')
-            searchField='nombre'
-            placeholder='Busca tu candidato'
-            noMatchesMessage='Sin resultados'
-              as |candidato|
-          }}
+<img src="/img/slider.png" alt="" width="100%" class="d-none d-md-block">
+<div class="container">
+{{!-- PowerSelect --}}
+    <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-8">
+            {{#power-select
+                selected=currentCandidato
+                options=model.perfiles
+                onchange=(route-action 'selectPerfil')
+                searchField='nombre'
+                placeholder='Busca a tu candidato o candidata'
+                noMatchesMessage='Sin resultados'
+                as |candidato|
+                }}
             <strong>{{candidato.nombre}}</strong>
-          {{/power-select}}
+            {{/power-select}}
         </div>
-
-        <div class="filters-container">
-          <strong>Filtrar por: </strong>
-          <label>
+    </div>
+{{!-- Filters --}}
+    <div class="row">
+        <div class="col-12 text-center">
+            <strong>Filtrar por:</strong>
+            <label>
             {{one-way-checkbox
-              esTodo
-              update=(queue
-                (action (mut esTodo))
-                (action 'applyFilter')
-              )
-            }}
-            Todo
-          </label>
-
-          <label>
-            {{one-way-checkbox
-              esMujer
-              update=(queue
+                esMujer
+                update=(queue
                 (action (mut esMujer))
-                (action 'applyFilter')
-              )
+                (action 'applyFilter'))
             }}
             Mujer
-          </label>
-
-          <label>
+            </label>
+            <label>
             {{one-way-checkbox
-              esHombre
-              update=(queue
+                esHombre
+                update=(queue
                 (action (mut esHombre))
-                (action 'applyFilter')
-              )
+                (action 'applyFilter'))
             }}
             Hombre
-         </label>
-
-          <label>
+            </label>
+            <label>
             {{one-way-checkbox
-              estaEnProceso
-              update=(queue
+                estaEnProceso
+                update=(queue
                 (action (mut estaEnProceso))
-                (action 'applyFilter')
-              )
+                (action 'applyFilter'))
             }}
             En proceso
-         </label>
-
-          <label>
+            </label>
+            <label>
             {{one-way-checkbox
-              estaDescalificado
-              update=(queue
+                esFinalista
+                update=(queue
+                (action (mut esFinalista))
+                (action 'applyFilter'))
+            }}
+            Finalista
+            </label>
+            <label>
+            {{one-way-checkbox
+                estaDescalificado
+                update=(queue
                 (action (mut estaDescalificado))
-                (action 'applyFilter')
-              )
+                (action 'applyFilter'))
             }}
             Descalificado
-         </label>
-       </div>
-      </div>
+            </label>
+        </div>
     </div>
-  {{/if}}
-
-  {{#if model.config.useFrontPortfolioVisualization}}
-    {{front-porfolio-visualization
+</div>
+{{!-- Portfolio --}}
+{{#if model.config.useFrontPortfolioVisualization}}
+  <div class="container-fluid bg-white">
+    <div>
+    {{front-portfolio
       perfiles=model.perfiles
       onDidInsertElement=(action 'applyFilter')
     }}
-  {{/if}}
-
-  {{#if model.config.useFrontTableVisualization}}
-    <table class="table">
-      <tr>
-        {{#each model.frontTableVisualizationConfig as |field|}}
-          <th>{{field.tableTitle}}</th>
-        {{/each}}
-      </tr>
-
-      {{#each model.perfiles as |perfil|}}
-        <tr>
-          {{#each model.frontTableVisualizationConfig as |field|}}
-            <td>
-              {{#if field.isLink}}
-                {{#link-to 'perfil' perfil.id}}
-                  {{get perfil field.fieldName}}
-                {{/link-to}}
-              {{else}}
-                {{get perfil field.fieldName}}
-              {{/if}}
-            </td>
-          {{/each}}
-        </tr>
-      {{/each}}
-    </table>
-  {{/if}}
-
-  {{#if model.config.mainPageLinks}}
-    <div class="row main-page-links bg-color-gray" style="margin-top: 20px; padding: 20px 5px;">
-      {{#each model.config.mainPageLinks as |link|}}
-        <div class="col-sm-6">
-          {{#if link.link}}
-            <a href="{{link.link}}">
-              {{#if link.imageLink}}
-                <img src="{{link.imageLink}}" title="{{link.title}}" class="img-responsive center"/>
-              {{else}}
-                {{link.title}}
-              {{/if}}
-            </a>
-          {{else}}
-            {{#link-to link.route}}
-              {{#if link.imageLink}}
-                <img src="{{link.imageLink}}" title="{{link.title}}" class="img-responsive center"/>
-              {{else}}
-                {{link.title}}
-              {{/if}}
-            {{/link-to}}
-          {{/if}}
-        </div>
-      {{/each}}
-    </div>
-  {{/if}}
-</div>
-
-  <div class="row text-center">
-    <div class="col-xs-12" style="margin-bottom: 30px;">
-      <a href="http://www.movimientoprojusticia.org.gt/" target="_blank"><img src="/app/img/logo-mpj-color.jpg" style="margin-left:auto;margin-right:auto;" width="500px"></a>
-      <a href="https://www.facebook.com/AlianzaRgt/" target="_blank"><img src="/app/img/logo-alianza-reforma.png" style="margin-left:auto;margin-right:auto;" height="100px"></a>
     </div>
   </div>
+{{/if}}

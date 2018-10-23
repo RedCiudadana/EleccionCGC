@@ -42,8 +42,8 @@
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f1f1f2ff;
-  line-height: 3;
+  background-color: #ffffff;
+  line-height: 2;
   overflow-x: hidden;
   text-overflow: ellipsis;
   min-height: 2em;
@@ -75,7 +75,7 @@
   border-top-right-radius: 4px; }
 
 .ember-power-select-placeholder {
-  color: #475059ff;
+  color: #999999;
   display: block;
   overflow-x: hidden;
   white-space: nowrap;
@@ -158,7 +158,7 @@
   line-height: inherit;
   padding: 0 5px; }
   .ember-power-select-search-input:focus {
-    border: 1px solid #f6921eff;
+    border: 1px solid #66afe9;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
     outline: 0; }
 

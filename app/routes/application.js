@@ -1,35 +1,55 @@
-import Ember from 'ember';
+// import injectScript from 'ember-inject-script';
 import config from '../config/environment';
-import injectScript from 'ember-inject-script';
-import ResetScrollMixin from 'ember-cli-reset-scroll';
+import EmberObject from '@ember/object';
+import Route from '@ember/routing/route';
+import RSVP from 'rsvp';
+import { A } from '@ember/array';
+import { hash } from 'rsvp';
+import { inject as service } from '@ember/service';
+import { isBlank } from '@ember/utils';
+import { Promise } from 'rsvp';
+import { set } from '@ember/object';
 
-const { isBlank, RSVP: { Promise }, set } = Ember;
-
-export default Ember.Route.extend(ResetScrollMixin, {
-
-  spreadsheets: Ember.inject.service(),
-
-  _routing: Ember.inject.service('-routing'),
-
-  ajax: Ember.inject.service(),
-
-  // Scrolls to top
-  resetScroll: undefined,
-
-  breadCrumb: {
-    title: 'application breadcrumb'
-  },
-
-  queryParams: {
-    fooYo: {}
-  },
+/**
+ * Application Route
+ *
+ * @class Route.Application
+ */
+export default Route.extend({
 
   /**
-   * Setear la URL de datos y de configuración en el servicio spreadhseet.
-   * 
-   * Además procesar los campos de información general del perfil.
+   * Spreadsheets Service
    *
+   * @property spreadsheets
+   * @type Service
+   */
+  spreadsheets: service(),
+
+  /**
+   * Routing Service
+   *
+   * @property _routing
+   * @type Service
+   */
+  _routing: service('-routing'),
+
+  /**
+   * Ajax Service
+   *
+   * @property ajax
+   * @type Service
+   */
+  ajax: service(),
+
+  /**
    * TODO: Hacer esto en un lugar más decente, por amor al Señor
+   */
+  /**
+   * Before model hook. Setear la URL de datos y de configuración en el servicio spreadsheet. Además procesar los campos de información general del perfil.
+   *
+   * @method beforeModel
+   * @param  {Promise} transition 
+   * @return {Object}            Un objecto con los datos de la configuración del proyecto desde el sevicio Spreadsheets.
    */
   beforeModel(transition) {
     const spreadsheetService = this.get('spreadsheets');
@@ -53,7 +73,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
 
         // Si config.APP.configSpreadsheetSourceUrl está definida, entonces obtener
         // también ese valor y setearlo en el spreadsheet service
-        if (!Ember.isBlank(config.APP.configSpreadsheetSourceUrl)) {
+        if (!isBlank(config.APP.configSpreadsheetSourceUrl)) {
           return this.get('ajax')
             .request(config.APP.configSpreadsheetSourceUrl, { dataType: 'text' })
             .then((response) => spreadsheetService.set('configSpreadsheetUrl', response));
@@ -62,7 +82,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
         return Promise.resolve(this);
       })
 
-      .then(() => Ember.RSVP.all([
+      .then(() => RSVP.all([
         /**
          * Setear la información general del perfil mediante la parametrización
          * proveniente de la configuración
@@ -70,16 +90,16 @@ export default Ember.Route.extend(ResetScrollMixin, {
         spreadsheetService
           .fetchConfig('perfil-informacion-general-configuracion')
           .then((configuracionData) => {
-            let perfilDataArray = Ember.A([]);
+            let perfilDataArray = A([]);
 
-            Ember.A(configuracionData).forEach((item) => {
+            A(configuracionData).forEach((item) => {
               perfilDataArray.pushObject({
                 field: item.field,
                 label: item.label
               });
             });
 
-            let prefilSerializer = this.store.serializerFor('perfil');
+            let prefilSerializer = this.store.serializerFor('magistrate');
 
             prefilSerializer.set('informacionGeneralFields', perfilDataArray);
           }),
@@ -88,60 +108,40 @@ export default Ember.Route.extend(ResetScrollMixin, {
          * Setear la información de recuadros del perfil mediante la parametrización
          * proveniente de la configuración
          */
+
         spreadsheetService
           .fetchConfig('perfil-recuadros-configuracion')
           .then((configuracionData) => {
-            let perfilRecuadrosDataArray = Ember.A([]);
+            let perfilRecuadrosDataArray = A([]);
 
-            Ember.A(configuracionData).forEach((item) => {
+            A(configuracionData).forEach((item) => {
               perfilRecuadrosDataArray.pushObject({
                 field: item.field,
                 label: item.label
               });
             });
 
-            let prefilSerializer = this.store.serializerFor('perfil');
+            let prefilSerializer = this.store.serializerFor('magistrate');
 
             prefilSerializer.set('recuadrosFields', perfilRecuadrosDataArray);
           }),
 
         // Información general de diputado
-        // TODO: Evaluar pertinencia, ya que es una funcionalidad específica de
-        // Elección PDH
         spreadsheetService
           .fetchConfig('diputado-informacion-general-configuracion')
           .then((configuracionData) => {
-            let diputadoDataArray = Ember.A([]);
+            let diputadoDataArray = A([]);
 
-            Ember.A(configuracionData).forEach((item) => {
+            A(configuracionData).forEach((item) => {
               diputadoDataArray.pushObject({
                 field: item.field,
                 label: item.label
               });
             });
 
-            let serializer = this.store.serializerFor('postulador-comision');
+            let diputadoSerializer = this.store.serializerFor('commission-deputies');
 
-            serializer.set('informacionGeneralFields', diputadoDataArray);
-            // serializer.set('frenteAFrenteFields', Ember.A());
-          }),
-
-        spreadsheetService
-          .fetchConfig('diputado-frente-a-frente-configuracion')
-          .then((configuracionData) => {
-            let postuladorFrenteAFrenteDataArray = Ember.A([]);
-
-            Ember.A(configuracionData).forEach((item) => {
-              postuladorFrenteAFrenteDataArray.pushObject({
-                field: item.field,
-                label: item.label,
-                section: item.section
-              });
-            });
-
-            let serializer = this.store.serializerFor('postulador-comision');
-
-            serializer.set('frenteAFrenteFields', postuladorFrenteAFrenteDataArray);
+            diputadoSerializer.set('informacionGeneralFields', diputadoDataArray);
           }),
 
         /**
@@ -150,9 +150,9 @@ export default Ember.Route.extend(ResetScrollMixin, {
         spreadsheetService
           .fetchConfig('perfil-frente-a-frente-configuracion')
           .then((configuracionData) => {
-            let perfilFrenteAFrenteDataArray = Ember.A([]);
+            let perfilFrenteAFrenteDataArray = A([]);
 
-            Ember.A(configuracionData).forEach((item) => {
+            A(configuracionData).forEach((item) => {
               perfilFrenteAFrenteDataArray.pushObject({
                 field: item.field,
                 label: item.label,
@@ -160,34 +160,42 @@ export default Ember.Route.extend(ResetScrollMixin, {
               });
             });
 
-            let serializer = this.store.serializerFor('perfil');
+            let prefilSerializer = this.store.serializerFor('magistrate');
 
-            serializer.set('frenteAFrenteFields', perfilFrenteAFrenteDataArray);
+            prefilSerializer.set('frenteAFrenteFields', perfilFrenteAFrenteDataArray);
           })
       ]));
   },
+
+  /**
+   * Model hook
+   *
+   * @method model
+   * @return {Object} Datos de nuestro aplicación, perfiles y datos de configuración.
+   */
 
   model() {
     const spreadsheet = this.get('spreadsheets');
     const _routing = this.get('_routing');
 
-    return Ember.RSVP.hash({
-      perfiles: this.store.findAll('perfil'),
-      diputados: this.store.findAll('postulador-comision'),
+    return hash({
+      // partidos: this.store.findAll('partido'),
+      perfiles: this.store.findAll('magistrate'),
+      diputados: this.store.findAll('commission-deputies'),
       config: spreadsheet.fetchConfig('configuracion')
         .then((configuracion) => {
-          let configObject = Ember.Object.create();
+          let configObject = EmberObject.create();
 
-          Ember.A(configuracion).forEach((item) => {
+          A(configuracion).forEach((item) => {
             configObject.set(item.key, item.value);
           });
 
           /**
            * Inject HelloBar if defined
            */
-          if (!isBlank(configObject.helloBarUrl)) {
-            injectScript(configObject.helloBarUrl);
-          }
+          // if (!isBlank(configObject.helloBarUrl)) {
+          //   injectScript(configObject.helloBarUrl);
+          // }
 
           return configObject;
         }),
@@ -196,7 +204,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
        * Header links, top right
        */
       navbarLinks: spreadsheet.fetchConfig('navbar-links').then((links) => {
-        return Ember.A(links).filter((link) => {
+        return A(links).filter((link) => {
           return _routing.hasRoute(link.route);
         });
       }),
@@ -207,7 +215,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
        * If the row does not include a link property it gets dissmissed
        */
       mainPageLinks: spreadsheet.fetchConfig('main-page-links').then((links) => {
-        return Ember.A(links).filter((link) => {
+        return A(links).filter((link) => {
           if (link.link) {
             return true;
           }
@@ -224,9 +232,9 @@ export default Ember.Route.extend(ResetScrollMixin, {
       institucionData: spreadsheet
         .fetch('institucion-data')
         .then((institucionData) => {
-          let institucionDataObject = Ember.Object.create();
+          let institucionDataObject = EmberObject.create();
 
-          Ember.A(institucionData).forEach((item) => {
+          A(institucionData).forEach((item) => {
             institucionDataObject.set(item.key, item.value);
           });
 
@@ -237,6 +245,13 @@ export default Ember.Route.extend(ResetScrollMixin, {
     });
   },
 
+  /**
+   * Levanta un controlador y asigna unos valores.
+   *
+   * @method setupController
+   * @param  {[type]} controller Clase controller.
+   * @param  {[type]} model      Modelo de esta ruta.
+   */
   setupController(controller, model) {
     this._super(controller, model);
 
@@ -245,9 +260,15 @@ export default Ember.Route.extend(ResetScrollMixin, {
     set(model.config, 'mainPageSliderData', model.mainPageSliderData);
   },
 
+  /**
+   * Acciones: selectPerfil.
+   * @property actions
+   * @type {Object}
+   */
   actions: {
     selectPerfil(candidato) {
       this.transitionTo('perfil', candidato.get('id'));
     }
   }
+
 });

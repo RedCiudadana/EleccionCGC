@@ -1,30 +1,68 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 import Tabletop from 'tabletop';
 import config from '../config/environment';
 import {isNotFoundError} from 'ember-ajax/errors';
+import { inject as service } from '@ember/service'
+import { Promise } from 'rsvp';
+import { isNone } from '@ember/utils';
 
-export default Ember.Service.extend({
-
-  ajax: Ember.inject.service(),
-
-  dataSpreadsheetUrl: null,
-
-  configSpreadsheetUrl: null,
-
-  flashMessages: Ember.inject.service(),
+/**
+ * Spreadsheets service.
+ * Servicios para obtener datos desde /static-files/ or Google's spreadsheets, según la configuración en 'environment'.
+ * Para generar los archivos ejecutar 'node build-data.js'. Antes revisar la documentación en la carpeta 'Documentation'.
+ * Preferiblemente usar 'static-files' porque el 'live-mode' es muy lento por la forma que obtiene los datos.
+ * 
+ * @class Service.Spreadsheets
+ * @example
+ * import { inject as service } from '@ember/service';
+ * spreadsheets: service()
+ */
+export default Service.extend({
 
   /**
-   * Los posibles valores para spreadsheetKey son 'data' y 'config'
+   * Ajax Service
+   *
+   * @property ajax
+   * @type Service
+   */
+  ajax: service(),
+
+  /**
+   * URL de la hoja de datos (perfiles, partidos, etc). Luego se obtiene de 'environment'
+   *
+   * @property dataSpreadsheetUrl
+   * @type String
+   * @default null
+   */
+  dataSpreadsheetUrl: null,
+
+  /**
+   * URL de la hoja de configuraciones (aspecto de la pagina, campos de perfiles, etc). Luego se obtiene de 'environment'
+   *
+   * @property configSpreadsheetUrl
+   * @type String
+   * @default null
+   */
+  configSpreadsheetUrl: null,
+
+  // flashMessages: service(),
+
+  /**
+   * Obtiene datos de una hoja especifica.
+   *
+   * @method fetch
+   * @param {string} worksheetName - Nombre de la hoja.
+   * @param {string} [spreadsheetKey='data'] - Puede ser 'data' o 'config' especifica la dirrección (archivo de google's spredsheet publicado) para obtener datos. Útil solamente cuando no se usa 'static-files'.
    */
   fetch(worksheetName, spreadsheetKey = 'data') {
 
     // Si config.APP.staticFilesUrl está definido, obtener la data de allí, independiente
     // del spreadsheetKey
-    if (!Ember.isNone(config.APP.staticFilesUrl)) {
+    if (!isNone(config.APP.staticFilesUrl)) {
       return this.get('ajax')
         .request(config.APP.staticFilesUrl + worksheetName + '.json')
         .then((response) => {
-          return new Ember.RSVP.Promise((resolve) => {
+          return new Promise((resolve) => {
             resolve(response);
           });
         })
@@ -41,11 +79,11 @@ export default Ember.Service.extend({
           // );
 
           // throw error;
-          console.log(errorMessage);
+          console.warn(errorMessage);
         });
     }
 
-    return new Ember.RSVP.Promise((resolve) => {
+    return new Promise((resolve) => {
 
       let spreadsheetUrl = this.get('dataSpreadsheetUrl');
 
@@ -53,28 +91,27 @@ export default Ember.Service.extend({
         spreadsheetUrl = this.get('configSpreadsheetUrl');
       }
 
-
       Tabletop.init({
         key: spreadsheetUrl,
         callback: (data) => {
-          if (Ember.isNone(data[worksheetName])) {
+          if (isNone(data[worksheetName])) {
             let errorMessage = `Got no answer for spreadsheet ${worksheetName}`;
             // TODO: Get back vorkin
             // this.get('flashMessages').danger(errorMessage, {sticky: true});
 
-            // TODO: Convertir en alerta de console.log
-            console.log(errorMessage);
+            // TODO: Convertir en alerta de console.warn
+            console.warn(errorMessage);
 
             return resolve();
           }
 
-          if (Ember.isNone(data[worksheetName].elements)) {
+          if (isNone(data[worksheetName].elements)) {
             let errorMessage = `Got a problem with the elements for spreadsheet ${worksheetName}`;
             // TODO: Get back vorkin
             // this.get('flashMessages').danger(errorMessage, {sticky: true});
 
-            // TODO: Convertir en alerta de console.log
-            console.log(errorMessage);
+            // TODO: Convertir en alerta de console.warn
+            console.warn(errorMessage);
 
             return resolve();
           }
@@ -85,6 +122,13 @@ export default Ember.Service.extend({
     });
   },
 
+  /**
+   * Wrap de fetch que tiene 'spreadsheetKey' como 'config'.
+   *
+   * @method fetchConfig
+   * @param  {string} worksheetName Nombre de la hoja.
+   * @return {Promise<string[], MyError>} Promesa con los datos.
+   */
   fetchConfig(worksheetName) {
     return this.fetch(worksheetName, 'config');
   }

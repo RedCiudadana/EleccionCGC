@@ -1,0 +1,71 @@
+<div class="container">
+{{!-- PowerSelect --}}
+    <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-8">
+            {{#power-select
+                selected=currentCandidato
+                options=model.perfiles
+                onchange=(route-action 'selectPerfil')
+                searchField='nombre'
+                placeholder='Busca a tu candidato o candidata'
+                noMatchesMessage='Sin resultados'
+                as |candidato|
+                }}
+            <strong>{{candidato.nombre}}</strong>
+            {{/power-select}}
+        </div>
+    </div>
+{{!-- Filters --}}
+    <div class="row">
+        <div class="col-12 text-center">
+            <strong>Filtrar por:</strong>
+            <label>
+            {{one-way-checkbox
+                presidente
+                update=(queue
+                (action (mut presidente))
+                (action 'applyFilter'))
+            }}
+            Presidente de la Comisión
+            </label>
+            <label>
+            {{one-way-checkbox
+                ccee
+                update=(queue
+                (action (mut ccee))
+                (action 'applyFilter'))
+            }}
+            Representantes CCEE (Colegio de Economistas)
+            </label>
+            <label>
+            {{one-way-checkbox
+                cpa
+                update=(queue
+                (action (mut cpa))
+                (action 'applyFilter'))
+            }}
+            Representantes CPA (Colegio Contadores Públicos y Auditores)
+            </label>
+            <label>
+            {{one-way-checkbox
+                decano
+                update=(queue
+                (action (mut decano))
+                (action 'applyFilter'))
+            }}
+            Decanos de las universidades
+            </label>
+        </div>
+    </div>
+</div>
+{{!-- Portfolio --}}
+{{#if model.config.useFrontPortfolioVisualization}}
+  <div class="container-fluid bg-white">
+    <div>
+    {{front-portfolio-deputies
+      perfiles=model.diputados
+      onDidInsertElement=(action 'applyFilter')
+    }}
+    </div>
+  </div>
+{{/if}}

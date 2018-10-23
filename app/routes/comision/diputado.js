@@ -10,24 +10,8 @@ export default Ember.Route.extend({
     const _routing = this.get('_routing');
 
     return Ember.RSVP.hash({
-      postulador: this.store.peekRecord('postulador-comision', params.id),
-      postuladores: this.modelFor('comision').diputados,
-      postuladorFuncionalidades: spreadsheet
-        .fetch('postulador-funcionalidades', 'config')
-        .then((links) => {
-          return Ember.A(links)
-            .filter((link) => {
-              if (link.link) {
-                return true;
-              }
-
-              if (!_routing.hasRoute(link.route)) {
-                throw new Error(`Route not recognized: ${link.route}`);
-              }
-
-              return true;
-            });
-        }),
+      diputado: this.store.peekRecord('commission-deputies', params.id),
+      diputados: this.modelFor('comision').diputados,
       resultadosEvaluaciones: spreadsheet
         .fetch('evaluaciones')
         .then((resultados) => {
@@ -45,9 +29,9 @@ export default Ember.Route.extend({
   },
 
   afterModel(model) {
-    if (!Ember.isNone(model.postulador.get('nombre'))) {
+    if (!Ember.isNone(model.diputado.get('nombre'))) {
       this.set('breadCrumb', {
-        title: model.postulador.get('nombre')
+        title: model.diputado.get('nombre')
       });
     }
   },

@@ -1,32 +1,30 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Controller from '@ember/controller';
+import { computed } from '@ember/object';
 
-const { computed } = Ember;
+export default Controller.extend({
 
-export default Ember.Controller.extend({
-  esTodo: true,
+  esMujer: true,
+  esHombre: true,
 
   currentSelector: computed(
     'esMujer',
     'esHombre',
     'estaEnProceso',
     'estaDescalificado',
-    'esTodo',
+    'esFinalista',
     function() {
       if (
         !this.get('esMujer')
             && !this.get('esHombre')
             && !this.get('estaEnProceso')
             && !this.get('estaDescalificado')
-            && !this.get('esTodo')
+            && !this.get('esFinalista')
       ) {
-        return '.nothing';
+        return '*';
       }
 
       let selectors = [];
-
-      if (this.get('esTodo')) {
-        return '*';
-      }
 
       if (this.get('esMujer')) {
         selectors.push('.mujer');
@@ -44,12 +42,17 @@ export default Ember.Controller.extend({
         selectors.push('.descalificado');
       }
 
+      if (this.get('esFinalista')) {
+        selectors.push('.finalista');
+      }
+
       return selectors.join(', ');
     }
   ),
 
   _applyFilter() {
-    var $container = Ember.$('#portfolio');
+
+    var $container = $('#portfolio');
 
     $container.isotope({transitionDuration: '0.65s'});
 
