@@ -55,6 +55,20 @@ $border-radius: 10px;
 // PANEL
 
 .panel {
+    img {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .panel {
+        img {
+            display: unset;
+        }
+    }
+}
+
+.panel {
     .header {
         display: flex;
         background-color: white;
