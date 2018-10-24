@@ -14,6 +14,12 @@ export default DS.JSONSerializer.extend({
       };
     });
 
+    resourceHash.frenteAFrente = {};
+
+    this.get('frenteAFrenteFields').forEach((item) => {
+      resourceHash.frenteAFrente[item.field] = resourceHash[item.field];
+    });
+
     return this._super(modelClass, resourceHash);
   }
 });

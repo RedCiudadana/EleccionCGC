@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   breadCrumb: null,
 
   model() {
@@ -10,7 +10,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
 
-    controller.set('perfilUnoId', model.postulador.get('id'));
+    controller.set('perfilUnoId', model.diputado.get('id'));
 
     controller.set(
       'frenteAFrenteFuncionalidad',
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
     );
 
     let frenteAFrenteFields = this.store
-      .serializerFor('postulador-comision')
+      .serializerFor('commission-deputies')
       .get('frenteAFrenteFields');
 
     controller.set('frenteAFrenteFields', frenteAFrenteFields);

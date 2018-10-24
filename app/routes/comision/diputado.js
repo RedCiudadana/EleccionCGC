@@ -1,9 +1,12 @@
 import Ember from 'ember';
 import config from '../../config/environment';
+import { inject as service } from '@ember/service';
+import { hash } from 'rsvp';
+import { A } from '@ember/array';
 
 export default Ember.Route.extend({
-  spreadsheets: Ember.inject.service(),
-  _routing: Ember.inject.service('-routing'),
+  spreadsheets: service(),
+  _routing: service('-routing'),
 
   model(params) {
     const spreadsheet = this.get('spreadsheets');
@@ -24,7 +27,23 @@ export default Ember.Route.extend({
               resultado: resultado.resultado
             }
           })
-        })
+        }),
+      perfilFuncionalidades: spreadsheet
+      .fetchConfig('postulador-funcionalidades')
+      .then((links) => {
+        return A(links)
+          .filter((link) => {
+            if (link.link) {
+              return true;
+            }
+
+            if (!_routing.hasRoute(link.route)) {
+              throw new Error(`Route not recognized: ${link.route}`);
+            }
+
+            return true;
+          });
+      }),
     });
   },
 

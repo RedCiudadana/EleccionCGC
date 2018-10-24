@@ -163,7 +163,30 @@ export default Route.extend({
             let prefilSerializer = this.store.serializerFor('magistrate');
 
             prefilSerializer.set('frenteAFrenteFields', perfilFrenteAFrenteDataArray);
+          }),
+
+          /**
+         * Setear los campos a utilizar en la funcionalidad de frente-a-frente
+         */
+        spreadsheetService
+          .fetchConfig('diputado-frente-a-frente-configuracion')
+          .then((configuracionData) => {
+            let perfilFrenteAFrenteDataArray = A([]);
+
+            A(configuracionData).forEach((item) => {
+              perfilFrenteAFrenteDataArray.pushObject({
+                field: item.field,
+                label: item.label,
+                section: item.section
+              });
+              console.log(item.field);
+            });
+
+            let prefilSerializer = this.store.serializerFor('commission-deputies');
+
+            prefilSerializer.set('frenteAFrenteFields', perfilFrenteAFrenteDataArray);
           })
+
       ]));
   },
 

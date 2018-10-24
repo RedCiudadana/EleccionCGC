@@ -32,10 +32,10 @@ export default Ember.Controller.extend({
   perfilDosId: null,
 
   perfilUno: Ember.computed('perfilUnoId', function() {
-    return this.get('model.postuladores').findBy('id', this.get('perfilUnoId'));
+    return this.get('model.diputados').findBy('id', this.get('perfilUnoId'));
   }),
 
   perfilDos: Ember.computed('perfilDosId', function() {
-    return this.get('model.postuladores').findBy('id', this.get('perfilDosId'));
+    return this.get('model.diputados').findBy('id', this.get('perfilDosId'));
   })
 });

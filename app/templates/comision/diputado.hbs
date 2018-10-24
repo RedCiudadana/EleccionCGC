@@ -1,13 +1,47 @@
 {{title model.diputado.nombre}}
 
 <section id="election">
-  <div class="row">
-    <div class="col-12">
-      <div class="text-right px-5 py-2">
-        {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
-        {{#fb-share-button quote=config.twitterShareLink hashtags='MiGuatemala'}}Share{{/fb-share-button}}
-      </div>
+
+    <div class="container mt-3">
+        {{#if model.perfilFuncionalidades}}
+            <div class="row">
+              <div class="col-12">
+                <div class="d-block d-md-none text-right">
+                  {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
+                  {{#fb-share-button quote=config.twitterShareLink hashtags='MiGuatemala'}}Share{{/fb-share-button}}
+                </div>
+                <div class="nav-candidator border">
+                  <nav>
+                    <ul class="list-inline m-0 d-md-flex">
+                      {{#each model.perfilFuncionalidades as |link|}}
+                            {{#if link.link}}
+                                <a href="{{link.link}}" title="{{link.title}}">
+                                  {{#if link.iconClass}}
+                                    <i class="{{link.iconClass}}"></i>
+                                  {{/if}}
+                                  {{link.name}}
+                                </a>
+                            {{else}}
+                              {{#link-to-wrapper link.route title=link.title}}
+                                  {{#if link.iconClass}}
+                                    <i class="{{link.iconClass}}"></i>
+                                  {{/if}}
+                                  {{link.name}}
+                              {{/link-to-wrapper}}
+                            {{/if}}
+                      {{/each}}
+                      <li class="px-3 ml-auto d-none d-md-block">
+                        {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
+                        {{#fb-share-button quote=config.twitterShareLink hashtags='MiGuatemala'}}Share{{/fb-share-button}}
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          {{/if}}
+
+          {{outlet}}
+
     </div>
-  </div>
-  {{outlet}}
 </section>
