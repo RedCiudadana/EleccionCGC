@@ -85,26 +85,29 @@
       <div class="panel resultados">
         <div class="header"><h4>Resultados evaluación</h4></div>
         <div class="body tabla-gradacion-content">
+          {{#if model.resultadosEvaluaciones}}
+            {{#each model.resultadosEvaluaciones as |resultadoEvaluacion|}}
+              <div class="row">
 
-          {{#each model.resultadosEvaluaciones as |resultadoEvaluacion|}}
-            <div class="row">
-
-              <div class="col-2 text-center foto-container">
-                <img
-                  src="{{resultadoEvaluacion.perfil.fotoPerfil}}"
-                  alt="{{resultadoEvaluacion.perfil.nombre}}"
-                  class="img-responsive center-block"
-                  style="max-width: 100px;"
-                >
+                <div class="col-2 text-center foto-container">
+                  <img
+                    src="{{resultadoEvaluacion.perfil.fotoPerfil}}"
+                    alt="{{resultadoEvaluacion.perfil.nombre}}"
+                    class="img-responsive center-block"
+                    style="max-width: 100px;"
+                  >
+                </div>
+                <div class="col-6 text-center text">
+                  <h6>{{resultadoEvaluacion.perfil.nombre}}</h6>
+                </div>
+                <div class="col-4">
+                  <span class="badge-primary badge text-white py-3">{{resultadoEvaluacion.resultado}}</span>
+                </div>
               </div>
-              <div class="col-6 text-center text">
-                <h6>{{resultadoEvaluacion.perfil.nombre}}</h6>
-              </div>
-              <div class="col-4">
-                <span class="badge-primary badge text-white py-3">{{resultadoEvaluacion.resultado}}</span>
-              </div>
-            </div>
-          {{/each}}
+            {{/each}}
+          {{else}}
+            <h6>No hay evaluaciones.</h6>
+          {{/if}}
         </div>
       </div>
     </div>
