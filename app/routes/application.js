@@ -179,7 +179,6 @@ export default Route.extend({
                 label: item.label,
                 section: item.section
               });
-              console.log(item.field);
             });
 
             let prefilSerializer = this.store.serializerFor('commission-deputies');

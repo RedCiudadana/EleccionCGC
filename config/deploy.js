@@ -24,7 +24,7 @@ module.exports = function(deployTarget) {
     ENV.git = {
       repo: 'https://github.com/RedCiudadana/EleccionCGC',
       branch: 'gh-pages',
-      worktreePath: '/tmp/ember-deploy'
+      worktreePath: '/tmp/deploy-eleccioncgc'
     };
   }
 

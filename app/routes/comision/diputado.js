@@ -18,14 +18,16 @@ export default Ember.Route.extend({
       resultadosEvaluaciones: spreadsheet
         .fetch('evaluaciones')
         .then((resultados) => {
-          return Ember.A(resultados).filterBy('postuladorId', params.id)
+          return A(resultados).filterBy('postuladorId', params.id);
+          console.log(resultados);
         })
         .then((resultados) => {
           return resultados.map((resultado) => {
             return {
-              perfil: this.store.peekRecord('perfil', resultado.perfilId),
+              perfil: this.store.peekRecord('magistrate', resultado.perfilId),
               resultado: resultado.resultado
             }
+            console.log(resultado);
           })
         }),
       perfilFuncionalidades: spreadsheet
