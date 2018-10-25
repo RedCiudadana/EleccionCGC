@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "perfil": "candidato-1",
+    "nombreDocumento": "CV (PDF)",
+    "urlDocumento": "http://www.oj.gob.gt//expediente/descargar.php?file=expediente1.pdf",
+    "cssClasses": "light-blue"
+  },
+  {
+    "perfil": "candidato-1",
+    "nombreDocumento": "Tabla de gradación (CSV)",
+    "urlDocumento": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZqWgbbWn1z2tceUiYAgimjsJZ6cNVxp126gunbCl5ohldMl7jgQYwEsqaqDpmHXhNwDN_kf5zcjWr/pub?output=xlsx",
+    "cssClasses": "light-blue"
+  }
+]
