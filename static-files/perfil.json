@@ -2,7 +2,7 @@
   {
     "id": "candidato-1",
     "nombre": "Candidata 1",
-    "cargo": "cargo",
+    "cargo": "Descalificado",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
@@ -36,7 +36,7 @@
   {
     "id": "candidato-2",
     "nombre": "Candidato 2",
-    "cargo": "cargo",
+    "cargo": "En proceso",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
@@ -70,7 +70,7 @@
   {
     "id": "candidato-3",
     "nombre": "Candidata 3",
-    "cargo": "cargo",
+    "cargo": "Descalificado",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
@@ -104,7 +104,7 @@
   {
     "id": "candidato-4",
     "nombre": "Candidato 4",
-    "cargo": "cargo",
+    "cargo": "Descalificado",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
@@ -138,7 +138,7 @@
   {
     "id": "candidato-5",
     "nombre": "Candidata 5",
-    "cargo": "cargo",
+    "cargo": "Descalificado",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
@@ -172,7 +172,7 @@
   {
     "id": "candidato-6",
     "nombre": "Candidato 6",
-    "cargo": "cargo",
+    "cargo": "Descalificado",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
@@ -206,7 +206,7 @@
   {
     "id": "candidato-7",
     "nombre": "Candidata 7",
-    "cargo": "cargo",
+    "cargo": "Descalificado",
     "institucion": "institucion",
     "profesion": "profesion",
     "educacion": "educacion",
