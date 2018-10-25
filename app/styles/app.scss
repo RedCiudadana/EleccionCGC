@@ -29,6 +29,13 @@ $border-radius: 10px;
 //     }
 // }
 
+// PERFIL
+
+table tbody td {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
 // TABLA DE GRADACION
 
 #tabla-gradacion {
@@ -85,8 +92,7 @@ $border-radius: 10px;
 .panel {
     .header {
         display: flex;
-        background-color: white;
-        color: $footer-background-color !important;
+        padding: 10px;
         padding-left: 40px;
 
         h4 {
