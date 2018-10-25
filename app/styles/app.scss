@@ -18,16 +18,10 @@ $border-radius: 10px;
 
 @import "ember-power-select-bootstrap";
 
-// // NAVBAR
-// .navbar-brand {
-//     margin-left: 200px;
-// }
-
-// @include media-breakpoint-up(sm) {
-//     .navbar-brand {
-//         margin-left: 0px;
-//     }
-// }
+// NAVBAR
+.navbar a {
+    font-size: 1.2rem;
+}
 
 // PERFIL
 

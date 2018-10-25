@@ -171,11 +171,7 @@
       <div class="panel">
         <div class="header"><h4>Tachas</h4></div>
         <div class="px-5">
-          {{#if (eq 0 tachas)}}
-            <div class="row tabla-tachas-header">
-              <div class="col-12 text-center">No se encontraron tachas asociadas al candidato</div>
-            </div>
-          {{else}}
+          {{#if tachas}}
             <div class="row tabla-tachas-header d-none d-md-flex">
               <div class="col-1 col-md-1 text-center icon-container">
                 No.
@@ -205,6 +201,8 @@
                 </div>
               </a>
             {{/each}}
+          {{else}}
+            <h6 class="py-5">No se encontraron tachas asociadas al candidato.</h6>
           {{/if}}
         </div>
       </div>

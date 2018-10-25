@@ -1,8 +1,9 @@
 <div class="container">
-{{!-- PowerSelect --}}
-    <div class="row justify-content-center my-5">
-        <div class="col-12 col-md-8">
-            {{#power-select
+    {{!-- PowerSelect --}}
+    <div class="row justify-content-center my-5 bg-light p-3">
+        <div class="col-12">
+            <div class="w-75 mx-auto p-2">
+                {{#power-select
                 selected=currentCandidato
                 options=model.perfiles
                 onchange=(route-action 'selectPerfil')
@@ -11,12 +12,11 @@
                 noMatchesMessage='Sin resultados'
                 as |candidato|
                 }}
-            <strong>{{candidato.nombre}}</strong>
-            {{/power-select}}
+                <strong>{{candidato.nombre}}</strong>
+                {{/power-select}}
+            </div>
         </div>
-    </div>
-{{!-- Filters --}}
-    <div class="row">
+    {{!-- Filters --}}
         <div class="col-12 text-center">
             <strong>Filtrar por:</strong>
             <label>
