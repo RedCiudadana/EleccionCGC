@@ -108,3 +108,13 @@ table tbody td {
 .list-metodologia li {
     margin-top: 10px;
 }
+
+li.active {
+    background-color: $primary;
+
+    a {
+        color: white !important;
+    }
+}
+
+

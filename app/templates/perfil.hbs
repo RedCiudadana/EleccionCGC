@@ -14,21 +14,23 @@
           <nav>
             <ul class="list-inline m-0 d-sm-flex">
               {{#each model.config.perfilFuncionalidades as |link|}}
-                    {{#if link.link}}
-                        <a href="{{link.link}}" title="{{link.title}}">
-                          {{#if link.iconClass}}
-                            <i class="{{link.iconClass}}"></i>
-                          {{/if}}
-                          {{link.name}}
-                        </a>
-                    {{else}}
-                      {{#link-to-wrapper link.route title=link.title}}
-                          {{#if link.iconClass}}
-                            <i class="{{link.iconClass}}"></i>
-                          {{/if}}
-                          {{link.name}}
-                      {{/link-to-wrapper}}
-                    {{/if}}
+                {{#active-link}}
+                  {{#if link.link}}
+                      <a href="{{link.link}}" title="{{link.title}}">
+                        {{#if link.iconClass}}
+                          <i class="{{link.iconClass}}"></i>
+                        {{/if}}
+                        {{link.name}}
+                      </a>
+                  {{else}}
+                    {{#link-to-wrapper link.route title=link.title}}
+                        {{#if link.iconClass}}
+                          <i class="{{link.iconClass}}"></i>
+                        {{/if}}
+                        {{link.name}}
+                    {{/link-to-wrapper}}
+                  {{/if}}
+                {{/active-link}}
               {{/each}}
               <li class="px-3 ml-auto d-none d-md-block">
                 {{#twitter-share-button title=config.twitterShareLink hashtags='MiGuatemala' via='Redxguate'}}Tweet{{/twitter-share-button}}
