@@ -1,4 +1,4 @@
-# MiGuatemala
+# CuentasCabales
 
-MiGuatemala es una aplicación destinada fomentar la transparencia en materia de funcionarios
+CuentasCabales es una aplicación destinada fomentar la transparencia en materia de funcionarios
 e instituciones públicas.

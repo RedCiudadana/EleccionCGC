@@ -28,6 +28,8 @@
 
 // Footer
 
+// Footer
+
 #footer {
     background-color: $footer-background-color;
     color: $footer-color;
@@ -41,6 +43,45 @@
     a:hover {
         // Calcula el color según el color de fondo. Aclara.
         color: lighten( $footer-background-color, 30% ) !important;
+    }
+
+    i {
+        margin-right: 8px;
+    }
+
+    // Ajusta alineación con los demas iconos.
+    .fa-map-marker {
+        padding-left: 2px;
+    }
+
+    .follow {
+        h6 {
+            margin-bottom: 1.5rem;
+        }
+        
+        img {
+            margin-right: 10px;
+        }
+    }
+
+    .image-opacity:hover {
+        opacity: 0.8;
+    }
+}
+
+#red-footer {
+    background-color: #e6e7e8;
+    color: #404041;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .logo-rc {
+        width: 120px;
+        height: 62px;
+    }
+
+    .cc-icons img {
+        margin-right: 10px;
     }
 }
 
