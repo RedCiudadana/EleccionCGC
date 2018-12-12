@@ -4,7 +4,7 @@ $primary: #f7941e;
 $secondary: #f7941e;
 $success: #00ac56;
 $warning: #f6ab40;
-$info: #26a5dc;
+$info: #192a39;
 $dark: #1e2b3d;
 
 $navbar-color: white;
@@ -17,6 +17,15 @@ $border-radius: 10px;
 @import "mi-guatemala";
 
 @import "ember-power-select-bootstrap";
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: #1b2b3a !important;
+    font-weight: 600;
+}
+
+p, span, body {
+    color: #495561;
+}
 
 // NAVBAR
 .navbar a {
@@ -31,7 +40,11 @@ $border-radius: 10px;
 
 table tbody td {
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #495561b8;
+}
+
+table tbody strong {
+    color: #495561;
 }
 
 // TABLA DE GRADACION
@@ -126,4 +139,10 @@ li.active {
 a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     color: $primary;
     text-decoration: none;
+}
+
+#tabla-gradacion {
+    .text-left {
+        margin-top: 12px;
+    }
 }
