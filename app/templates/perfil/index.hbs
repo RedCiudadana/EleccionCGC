@@ -1,10 +1,10 @@
-  <div class="row border my-4 p-4 p-md-0">
+  <div class="row border my-4 p-4 pt-md-4">
     <div class="col-md-3 p-1 p-md-4 text-center">
       <img
           src="{{model.perfil.fotoPerfil}}"
           alt="{{model.perfil.nombre}}"
           border="0"
-          class="img-responsive center-block w-75"
+          class="img-responsive center-block w-100"
         >
     </div>
 
@@ -34,7 +34,7 @@
           <p class="datos-abiertos">
             <a
               href="{{documento.urlDocumento}}"
-              class="btn btn-info w-75 text-white"
+              class="btn btn-info w-100 text-white"
               target="_blank"
               style="font-weight: 400;"
             >
@@ -82,15 +82,18 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header d-flex"><img src="img/logo-documento.png" alt="Plan de trabajo" height="75"><h3>Plan de trabajo</h3></div>
-        <div class="body">
-          {{model.perfil.planTrabajo}}
-        </div>
+  </div>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="panel">
+      <div class="header d-flex"><img src="img/logo-documento.png" alt="Plan de trabajo" height="75"><h3>Plan de trabajo</h3></div>
+      <div class="body">
+        {{model.perfil.planTrabajo}}
       </div>
     </div>
   </div>
+</div>
 
   <div class="row">
     <div id="tabla-gradacion" class="col-12 col-md-6">

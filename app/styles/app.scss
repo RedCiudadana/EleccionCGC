@@ -44,7 +44,7 @@ table tbody td {
 }
 
 table tbody strong {
-    color: #495561;
+    color: #495561 !important;
 }
 
 // TABLA DE GRADACION
@@ -144,5 +144,12 @@ a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]
 #tabla-gradacion {
     .text-left {
         margin-top: 12px;
+    }
+}
+
+.filters {
+    label {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
