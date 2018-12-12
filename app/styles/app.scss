@@ -92,19 +92,16 @@ table tbody td {
     }
 }
 
+// Panel
+
+.panel, .nav-candidator {
+    background-color: white;
+    border-radius: 5px;
+}
+
 .panel {
-    .header {
-        display: flex;
-        padding: 10px;
-        padding-left: 40px;
-
-        h4 {
-            padding: 20px;
-        }
-    }
-
-    .body {
-        padding: 30px;
+    .header h3{
+        font-size: 1.2rem !important;
     }
 }
 
