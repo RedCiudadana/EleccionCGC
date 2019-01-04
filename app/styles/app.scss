@@ -166,3 +166,24 @@ a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]
         color: white !important;
     }
 }
+
+
+.colaboradores {
+    margin-bottom: 60px;
+
+    h5 {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    img {
+        max-width: 33%;
+        max-height: 70px;
+        margin: 10px;
+        filter: grayscale(1.0);
+    }
+
+    img:hover {
+        filter: grayscale(0);
+    }
+}
