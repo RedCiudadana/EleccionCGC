@@ -39,7 +39,7 @@ module.exports = function(environment) {
         name: 'GoogleAnalytics',
         environments: ['production', 'development'],
         config: {
-          id: 'UA-XXXX-Y',
+          id: 'UA-131725363-1',
           // Use verbose tracing of GA events
           trace: environment === 'development',
           // Ensure development env hits aren't sent to GA
