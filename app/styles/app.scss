@@ -153,3 +153,16 @@ a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]
         margin-right: 10px;
     }
 }
+
+
+.status-banner {
+    span {
+        color: white !important;
+    }
+}
+
+#footer {
+    h1, h2, h3, h4, h5, h6, strong {
+        color: white !important;
+    }
+}

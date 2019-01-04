@@ -1,8 +1,10 @@
 <img src="/img/slider.png" alt="" width="100%" class="d-none d-md-block">
 <div class="container">
-    {{!-- PowerSelect --}}
+    {{!-- Power Select & Filters --}}
     <div class="row justify-content-center mx-5 my-5 bg-light p-3">
-        <div class="col-12">
+        {{!-- PowerSelect --}}
+        <div class="col-12 text-center">
+            <h5>Conoce a los candidatos y candidatos para la elección de Contralor General Cuentas</h5>
             <div class="w-75 mx-auto p-2">
                 {{#power-select
                 selected=currentCandidato
@@ -17,7 +19,7 @@
                 {{/power-select}}
             </div>
         </div>
-    {{!-- Filters --}}
+        {{!-- Filters --}}
         <div class="col-12 text-center filters">
             <strong>Filtrar por:</strong>
             <label>
@@ -66,6 +68,26 @@
             Descalificado
             </label>
         </div>
+    </div>
+    {{!-- Status banner --}}
+    <div class="row status-banner text-center text-white pb-5">
+      <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+        <div style="background-color: #1b2b3a; color: #ffffff; padding: 18px; font-weight: 600;">
+          <span style="font-size: 34px;">
+            {{{model.config.procesoEleccionTitulo}}}
+          </span>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 visible-xs" style="background-color: #ffc80f; color: #ffffff; padding: 18px;">
+        <div class="col-md-12">
+          {{{model.config.procesoEleccionPasoActual}}}
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 visible-xs" style="background-color: #75bbcc; color: #ffffff; padding: 18px;">
+        {{{model.config.procesoEleccionSiguientePaso}}}
+      </div>
     </div>
 </div>
 {{!-- Portfolio --}}
