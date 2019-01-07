@@ -1,210 +1,210 @@
-  <div class="row border my-4 p-4 pt-md-4">
-    <div class="col-md-3 p-1 p-md-4 text-center">
-      <img
-          src="{{model.perfil.fotoPerfil}}"
-          alt="{{model.perfil.nombre}}"
-          border="0"
-          class="img-responsive center-block w-100"
-        >
-    </div>
+<div class="row border my-4 p-4 pt-md-4">
+  <div class="col-md-3 p-1 p-md-4 text-center">
+    <img
+        src="{{model.perfil.fotoPerfil}}"
+        alt="{{model.perfil.nombre}}"
+        border="0"
+        class="img-responsive center-block w-100"
+      >
+  </div>
 
-    <div class="col-md-5 p-1 p-md-4 d-block d-md-flex">
-      <div class="text-left w-100">
-        <h2>{{model.perfil.nombre}}</h2>
-        <table class="table">
-          <tbody>
-            {{#each-in model.perfil.informacionGeneral as |key item|}}
-              <tr>
-                <td class="p-0 px-2">
-                  <small>
-                    {{#if item.label}} <strong>{{{item.label}}}</strong> {{/if}}
-                    {{{item.value}}}
-                  </small>
-                </td>
-              </tr>
-            {{/each-in}}
-          </tbody>
-        </table>
-      </div>
+  <div class="col-md-5 p-1 p-md-4 d-block d-md-flex">
+    <div class="text-left w-100">
+      <h2>{{model.perfil.nombre}}</h2>
+      <table class="table">
+        <tbody>
+          {{#each-in model.perfil.informacionGeneral as |key item|}}
+            <tr>
+              <td class="p-0 px-2">
+                <small>
+                  {{#if item.label}} <strong>{{{item.label}}}</strong> {{/if}}
+                  {{{item.value}}}
+                </small>
+              </td>
+            </tr>
+          {{/each-in}}
+        </tbody>
+      </table>
     </div>
+  </div>
 
-    <div class="col-md-4 social-side text-center d-block p-md-4">
+  <div class="col-md-4 social-side text-center d-block p-md-4">
+    <div>
+      {{#each documentosDisponibles as |documento|}}
+        <p class="datos-abiertos">
+          <a
+            href="{{documento.urlDocumento}}"
+            class="btn btn-dark w-100 text-white"
+            target="_blank"
+            style="font-weight: 400;"
+          >
+            {{documento.nombreDocumento}}
+          </a>
+        </p>
+      {{/each}}
+    </div>
+    <div class="mt-3 d-block">
       <div>
-        {{#each documentosDisponibles as |documento|}}
-          <p class="datos-abiertos">
-            <a
-              href="{{documento.urlDocumento}}"
-              class="btn btn-dark w-100 text-white"
-              target="_blank"
-              style="font-weight: 400;"
-            >
-              {{documento.nombreDocumento}}
-            </a>
-          </p>
-        {{/each}}
+        <a href="{{mode.perfil.tw}}" target="_blank"><i class="fa fa-twitter mr-1"></i>{{model.perfil.tw}}</a>
       </div>
-      <div class="mt-3 d-flex">
-        <div class="w-50">
-          <a href="{{mode.perfil.tw}}" target="_blank"><i class="fa fa-twitter mr-1"></i>{{model.perfil.tw}}</a>
-        </div>
-        <div class="w-50">
-          <a href="{{model.perfil.fb}}" target="_blank"><i class="fa fa-facebook mr-1"></i>{{model.perfil.nombre}}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-      <div class="panel">
-        <div class="header d-flex"><img src="img/logo-documento.png" alt="Biografía" height="75"><h3>Biografía</h3></div>
-        <div class="body">
-          {{model.perfil.biografia}}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header d-flex"><img src="img/logo-libro.png" alt="Experiencia academica" height="75"><h3>Experiencia académica</h3></div>
-        <div class="body">
-          {{model.perfil.experienciaAcademica}}
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header d-flex"><img src="img/logo-portafolio.png" alt="Experiencia profesional" height="75"><h3>Experiencia profesional</h3></div>
-        <div class="body">
-          {{model.perfil.experienciaProfesional}}
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="row">
-  <div class="col-12 col-md-6">
-    <div class="panel">
-      <div class="header d-flex"><img src="img/logo-documento.png" alt="Plan de trabajo" height="75"><h3>Plan de trabajo</h3></div>
-      <div class="body">
-        {{model.perfil.planTrabajo}}
+      <div>
+        <a href="{{model.perfil.fb}}" target="_blank"><i class="fa fa-facebook mr-1"></i>{{model.perfil.nombre}}</a>
       </div>
     </div>
   </div>
 </div>
 
-  <div class="row">
-    <div id="tabla-gradacion" class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header d-flex"><h3>Tabla de gradación</h3></div>
-        <div class="body p-0 p-md-2">
-          <div class="row p-1 p-md-4 text-center">
-            <div class="col-12 col-md-2 text-center icon-container">
-              <img src="img/logo-aspectos-academicos.png" class="img-responsive center" />
-            </div>
-            <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
-              Aspectos académicos
-            </div>
-            <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada1}}</span>
-            </div>
-          </div>
-
-          <div class="row p-1 p-md-4 text-center">
-            <div class="col-12 col-md-2 text-center icon-container">
-              <img src="img/logo-aspectos-profesionales.png" class="img-responsive center" />
-            </div>
-            <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
-              Aspectos profesionales
-            </div>
-            <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada2}}</span>
-            </div>
-          </div>
-
-          <div class="row p-1 p-md-4 text-center">
-            <div class="col-12 col-md-2 text-center icon-container">
-              <img src="img/logo-proyeccion-humana.png" class="img-responsive center" />
-            </div>
-            <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
-              Proyección humana e idoneidad
-            </div>
-            <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada3}}</span>
-            </div>
-          </div>
-
-          <div class="row p-1 p-md-4 text-center">
-            <div class="col-12 col-md-2 text-center icon-container">
-              <img src="img/logo-cualidades-eticas.png" class="img-responsive center" />
-            </div>
-            <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
-              Cualidades éticas y de probidad
-            </div>
-            <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded">
-                {{#if model.perfil.notaAreaEvaluada4}}
-                  <li class="fa fa-check"></li>
-                {{else}}
-                  <li class="fa fa-times"></li>
-                {{/if}}
-              </span>
-            </div>
-          </div>
-
-          <div class="row p-1 p-md-4 text-center">
-            <div class="col-12 col-md-10 col-md-offset-0 text-container">
-              Puntaje total
-            </div>
-            <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
-              <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.resultadosEvaluacion}}</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6">
-      <div class="panel">
-        <div class="header"><h3>Tachas</h3></div>
-        <div class="px-5">
-          {{#if tachas}}
-            <div class="row tabla-tachas-header d-none d-md-flex">
-              <div class="col-1 col-md-1 text-center icon-container">
-                No.
-              </div>
-              <div class="col-6 col-md-7 col-md-offset-0 text-container">
-                Tacha
-              </div>
-              <div class="col-4 col-md-4">
-                Presentada por
-              </div>
-            </div>
-            {{#each model.tachas as |tacha index|}}
-              <a href={{tacha.tachaUrl}} target="_blank" class="row my-3">
-                <div class="col-1 text-center icon-container">
-                  <strong class="d-block d-md-none">No:</strong>
-                  {{add index 1}}
-                </div>
-
-                <div class="col-12 col-md-7 col-md-offset-0 text-container">
-                  <strong class="d-block d-md-none">Descripcion:</strong>
-                  {{{tacha.tacha}}}
-                </div>
-
-                <div class="col-12 col-md-4">
-                  <strong class="d-block d-md-none">Presentado por:</strong>
-                  {{{tacha.presentadoPor}}}
-                </div>
-              </a>
-            {{/each}}
-          {{else}}
-            <h6 class="py-5">No se encontraron tachas asociadas al candidato.</h6>
-          {{/if}}
-        </div>
+<div class="row">
+  <div class="col-12">
+    <div class="panel">
+      <div class="header d-flex"><img src="img/logo-documento.png" alt="Biografía" height="75"><h3>Biografía</h3></div>
+      <div class="body">
+        {{model.perfil.biografia}}
       </div>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="panel">
+      <div class="header d-flex"><img src="img/logo-libro.png" alt="Experiencia academica" height="75"><h3>Experiencia académica</h3></div>
+      <div class="body">
+        {{model.perfil.experienciaAcademica}}
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="panel">
+      <div class="header d-flex"><img src="img/logo-portafolio.png" alt="Experiencia profesional" height="75"><h3>Experiencia profesional</h3></div>
+      <div class="body">
+        {{model.perfil.experienciaProfesional}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-12 col-md-6">
+  <div class="panel">
+    <div class="header d-flex"><img src="img/logo-documento.png" alt="Plan de trabajo" height="75"><h3>Plan de trabajo</h3></div>
+    <div class="body">
+      {{model.perfil.planTrabajo}}
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div id="tabla-gradacion" class="col-12 col-md-6">
+    <div class="panel">
+      <div class="header d-flex"><h3>Tabla de gradación</h3></div>
+      <div class="body p-0 p-md-2">
+        <div class="row p-1 p-md-4 text-center">
+          <div class="col-12 col-md-2 text-center icon-container">
+            <img src="img/logo-aspectos-academicos.png" class="img-responsive center" />
+          </div>
+          <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
+            Aspectos académicos
+          </div>
+          <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+            <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada1}}</span>
+          </div>
+        </div>
+
+        <div class="row p-1 p-md-4 text-center">
+          <div class="col-12 col-md-2 text-center icon-container">
+            <img src="img/logo-aspectos-profesionales.png" class="img-responsive center" />
+          </div>
+          <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
+            Aspectos profesionales
+          </div>
+          <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+            <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada2}}</span>
+          </div>
+        </div>
+
+        <div class="row p-1 p-md-4 text-center">
+          <div class="col-12 col-md-2 text-center icon-container">
+            <img src="img/logo-proyeccion-humana.png" class="img-responsive center" />
+          </div>
+          <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
+            Proyección humana e idoneidad
+          </div>
+          <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+            <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.notaAreaEvaluada3}}</span>
+          </div>
+        </div>
+
+        <div class="row p-1 p-md-4 text-center">
+          <div class="col-12 col-md-2 text-center icon-container">
+            <img src="img/logo-cualidades-eticas.png" class="img-responsive center" />
+          </div>
+          <div class="col-12 col-md-8 col-md-offset-0 text-container text-left">
+            Cualidades éticas y de probidad
+          </div>
+          <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+            <span class="badge-primary text-white py-2 px-3 rounded">
+              {{#if model.perfil.notaAreaEvaluada4}}
+                <li class="fa fa-check"></li>
+              {{else}}
+                <li class="fa fa-times"></li>
+              {{/if}}
+            </span>
+          </div>
+        </div>
+
+        <div class="row p-1 p-md-4 text-center">
+          <div class="col-12 col-md-10 col-md-offset-0 text-container">
+            Puntaje total
+          </div>
+          <div class="col-12 col-md-2 my-2" style="padding-left: 5px; padding-right: 5px;">
+            <span class="badge-primary text-white py-2 px-3 rounded-primary rounded text-white py-2 px-3">{{model.perfil.resultadosEvaluacion}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <div class="panel">
+      <div class="header"><h3>Tachas</h3></div>
+      <div class="px-5">
+        {{#if tachas}}
+          <div class="row tabla-tachas-header d-none d-md-flex">
+            <div class="col-1 col-md-1 text-center icon-container">
+              No.
+            </div>
+            <div class="col-6 col-md-7 col-md-offset-0 text-container">
+              Tacha
+            </div>
+            <div class="col-4 col-md-4">
+              Presentada por
+            </div>
+          </div>
+          {{#each model.tachas as |tacha index|}}
+            <a href={{tacha.tachaUrl}} target="_blank" class="row my-3">
+              <div class="col-1 text-center icon-container">
+                <strong class="d-block d-md-none">No:</strong>
+                {{add index 1}}
+              </div>
+
+              <div class="col-12 col-md-7 col-md-offset-0 text-container">
+                <strong class="d-block d-md-none">Descripcion:</strong>
+                {{{tacha.tacha}}}
+              </div>
+
+              <div class="col-12 col-md-4">
+                <strong class="d-block d-md-none">Presentado por:</strong>
+                {{{tacha.presentadoPor}}}
+              </div>
+            </a>
+          {{/each}}
+        {{else}}
+          <h6 class="py-5">No se encontraron tachas asociadas al candidato.</h6>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
