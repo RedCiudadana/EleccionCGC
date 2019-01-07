@@ -62,6 +62,7 @@ export default Controller.extend({
 
   actions: {
     applyFilter() {
+      console.log('aplicandoFiltro');
       return this._applyFilter();
     }
   }

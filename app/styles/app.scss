@@ -18,13 +18,19 @@ $border-radius: 10px;
 
 @import "ember-power-select-bootstrap";
 
-h1, h2, h3, h4, h5, h6, strong {
+h1, h2, h3, h4, h5, h6 {
     color: #1b2b3a !important;
     font-weight: 600;
 }
 
 p, span, body {
     color: #495561;
+}
+
+// Top banner
+.top-banner {
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 // NAVBAR
